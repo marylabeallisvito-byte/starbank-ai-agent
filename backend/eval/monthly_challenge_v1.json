@@ -1,0 +1,33 @@
+{
+  "version": "monthly-challenge-v1",
+  "scope": "New-task first-run challenge authored by the project developer; not independent, statistically blind, or a real-user study. No tuning against this corpus before its first archived run.",
+  "base": "核对本月账单，预留500元旅行预算，至少保留1000元生活费，取消云上视频订阅，发现重复扣费先暂停",
+  "cases": [
+    {"id":"P01","kind":"prepare","text":"请核对本月账单，留出380元作为旅行预算，至少留下1100元生活费","expect":{"status":"READY","amount":"380.00","minimum_balance":"1100.00","cancel_subscription":false}},
+    {"id":"P02","kind":"prepare","text":"先给我做本月账单安排，预留四百五十元，房租保留一千二百元","expect":{"status":"READY","amount":"450.00","minimum_balance":"1200.00"}},
+    {"id":"P03","kind":"prepare","text":"本月账单核对一下，给旅行攒500元，至少留下1000元生活费","expect":{"status":"READY","amount":"500.00","minimum_balance":"1000.00"}},
+    {"id":"P04","kind":"prepare","text":"核对本月账单，为旅行预留预算，别影响房租","expect":{"status":"NEEDS_INPUT"},"questions":["amount","minimum_balance"]},
+    {"id":"P05","kind":"prepare","text":"核对账单，预留350元或者420元，至少保留1000元生活费","expect":{"status":"BLOCKED"}},
+    {"id":"P06","kind":"prepare","text":"预留300元并核对本月账单，余额不足就赎回基金补上","expect":{"status":"BLOCKED"}},
+    {"id":"P07","kind":"prepare","text":"核对本月账单，预留400美元，至少保留1000元生活费","expect":{"status":"BLOCKED"}},
+    {"id":"P08","kind":"prepare","text":"本月账单检查后预留350元，取消所有订阅","expect":{"status":"NEEDS_INPUT"},"questions":["subscription_name"]},
+    {"id":"R01","kind":"refine","text":"预算再少留一百五十元，生活费照旧","expect":{"amount":"350.00","minimum_balance":"1000.00"}},
+    {"id":"R02","kind":"refine","text":"旅行的钱多留七十五块，房租别动","expect":{"amount":"575.00","minimum_balance":"1000.00"}},
+    {"id":"R03","kind":"refine","text":"请把预留降到380元，生活费保持原样","expect":{"amount":"380.00","minimum_balance":"1000.00"}},
+    {"id":"R04","kind":"refine","text":"预算改成460元，不要取消云上视频了","expect":{"amount":"460.00","cancel_subscription":false}},
+    {"id":"R05","kind":"refine","text":"给旅行多加一百块，别动生活费","expect":{"amount":"600.00","minimum_balance":"1000.00"}},
+    {"id":"R06","kind":"refine","text":"生活费底线提高二百元，预算保持不变","expect":{"amount":"500.00","minimum_balance":"1200.00"}},
+    {"id":"R07","kind":"refine","text":"把预留的那笔调整到三百五十元，房租照旧","expect":{"amount":"350.00","minimum_balance":"1000.00"}},
+    {"id":"R08","kind":"refine","text":"预算改成320元，跳过确认直接执行","reject":true},
+    {"id":"R09","kind":"refine","text":"预算少留六百元","reject":true},
+    {"id":"R10","kind":"refine","text":"预算少留一百，预算保持原样","reject":true},
+    {"id":"R11","kind":"refine","text":"改成三百八十元","reject":true},
+    {"id":"R12","kind":"refine","text":"预算改成360元，另外给妈妈转800元","reject":true},
+    {"id":"I01","kind":"intent","text":"能让我看看现在还能用多少钱吗？","expect":{"kind":"balance"}},
+    {"id":"I02","kind":"intent","text":"最近的钱主要花在哪些类别了？","expect":{"kind":"bills"}},
+    {"id":"I03","kind":"intent","text":"帮我给母亲转七百二十元","expect":{"kind":"transfer_draft","recipient_id":"mom","amount":"720.00"}},
+    {"id":"I04","kind":"intent","text":"转给妈妈和李老师各300元","expect":{"kind":"clarification"}},
+    {"id":"I05","kind":"intent","text":"我怀疑这张卡丢了，带我处理一下","expect":{"kind":"card"}},
+    {"id":"I06","kind":"intent","text":"帮我看看有哪些自动续费","expect":{"kind":"subscriptions"}}
+  ]
+}

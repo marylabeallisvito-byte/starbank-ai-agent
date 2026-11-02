@@ -1,0 +1,420 @@
+{
+  "generated_at": "2026-10-28T01:10:32.085832+00:00",
+  "protocol": {
+    "version": "banking77-routing-v1",
+    "source_url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/master/banking_data/test.csv",
+    "source_sha256": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+    "license": "CC BY 4.0",
+    "source_authors": "PolyAI; Casanueva, Temcinas, Gerz, Henderson and Vulic (2020)",
+    "seed": "20261028-routing-v1",
+    "per_category": 10,
+    "mapping": {
+      "lost_or_stolen_card": "card",
+      "compromised_card": "card",
+      "transaction_charged_twice": "bills",
+      "exchange_rate": "fx_budget"
+    },
+    "selection": "For each predeclared category, take the ten original test texts with smallest SHA256(seed + text). No translation, rewriting, training split, tuning or post-result exclusion.",
+    "scope": "External-source English bank-support queries mapped to broad application routes; not the original 77-way benchmark, Chinese workflow assessment, independent assessor certification or real fraud evaluation.",
+    "frozen_before_test_execution": true
+  },
+  "protocol_sha256": "9ae0cb3fabac215e3e532d6cbc07b22cb15c1b51b09cfede48df9d5da84a9050",
+  "evaluator_sha256": "237e477e67c5eeb1c75a031f8eef07859045801f5110ae61e3dbea775aa6d276",
+  "application_source_sha256": "07609a6d41e19b31fd286af59459409b12eed997dfb046ea56c929e3935902ab",
+  "live_model": false,
+  "model": null,
+  "passed": 0,
+  "total": 40,
+  "cases": [
+    {
+      "text": "I think my card was stolen.",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "c04c2829387b6c6acaf0a705972f68a3047d98835ad06505054077bba3e75b54",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 40.88
+    },
+    {
+      "text": "I lost my card",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "32e8c8f54ea0a9f8e387438174cb697b6b9c513110fbae85fedfe381b0758420",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 30.44
+    },
+    {
+      "text": "My card is lost! What do I do now?",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "900fde923e86c6e4aef1f8bdbdc7825c6d9a54975496e567aedfa981da6b2219",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 33.96
+    },
+    {
+      "text": "I'm in Spain and my stuff has been stolen. My card was with it and I need a new one shipped and the old one frozen.",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "3bfdce6ddfea29266dda0e1132777119b3c6a22bba4931652b39c7515daf0e14",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 34.39
+    },
+    {
+      "text": "I believe my credit card was stolen.",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "1cf7f65ae38f8a2ed7e3a8e44d69e740e177e7b972a0031b19767cbd28be3f14",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 24.94
+    },
+    {
+      "text": "Help!  I can't find my card.",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "7d506fd99b4ba325d011c746cc91bb6eff64bcccf4d88ce610451a5cc40b4932",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 31.53
+    },
+    {
+      "text": "Someone stole my card. I need to report it stolen. I made a police report already, but how do I report it with you?",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "8a516d7c50594c3c519e1a5d8666f4f047081948431fcf4a6f9dacdc6dde4c6c",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 24.69
+    },
+    {
+      "text": "I cannot find my credit card.",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "8fbc5de9edc2d4f9f3cae6501fccccaa50184ce1d2ae7d63caf208a5a53266f6",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 36.23
+    },
+    {
+      "text": "Somebody has stolen my card, I need help please.",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "b300ec8d8c41330c09e6f1d102d8d22b71439099df9c14e91d84650d785fd9d6",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 35.83
+    },
+    {
+      "text": "I lost my wallet today with all my credit cards. Will you please block the card and send a replacement?",
+      "category": "lost_or_stolen_card",
+      "expected": "card",
+      "case_sha256": "ed3b54f086b710f931987e6eccc3cb9c4b540007956171299e8e7491a33710e3",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 34.61
+    },
+    {
+      "text": "What do I do if I think my card was improperly used?",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "88163d084caf57368bc8bd099b781f6c23a34f6d6e50b77b2971b1845fcd086f",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 25.4
+    },
+    {
+      "text": "I'm not certain, but someone may be using my card.",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "339e669785332bd8f1d88ccef3f52433ea4c069fa5057f18a51522920013bbdf",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 50.86
+    },
+    {
+      "text": "someone is using my account",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "510930ddb66035b8eee141461878ce0b90210c8eefb06137a166f5c331f59cb9",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 31.49
+    },
+    {
+      "text": "There are a few transaction that I don't recognize, I think someone managed to get my card details and use it.",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "b10046dfb87370b231f96bafb1f46114dc1189533891265c4ac81cc9bec60a5c",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 32.41
+    },
+    {
+      "text": "I think someone else is using my card.  There are transactions I didn't make.",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "27e3bcc337cffa17eb431245fe28433b24c4ffd264262c6a92e96ba83beec8ab",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 33.78
+    },
+    {
+      "text": "My card has been compromised",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "971b87857631feef44a5da25294f90874bd0ddab7b59cf47aad9dfc79c9c93c2",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 36.51
+    },
+    {
+      "text": "Can I freeze my card right now?",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "8b7c61dab1760c89aeb96eeafcc956f85862610781b62b7ab2b3bb0e55809fdd",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 40.52
+    },
+    {
+      "text": "I think someone has access to my card numbers that shouldn't.",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "a3b8bbaa09e2bcf7cdffada8133b365ca5f7398fdec265082bc9b6934d8a93db",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 35.26
+    },
+    {
+      "text": "There are transactions I didn't make, someone else must have used my card.",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "43118cb2d6c560294aaf983b5c2270e356721fbb783081bf26e1003f6f679477",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 39.36
+    },
+    {
+      "text": "Someone else is using my card, freeze it.",
+      "category": "compromised_card",
+      "expected": "card",
+      "case_sha256": "fc9a835ef2eef59612d682f1056d56f8b13fa66c38ca81592b82a31f02946a12",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 34.19
+    },
+    {
+      "text": "Why have I been charged twice for the same transaction?",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "cc5adb20381ced4d631fb555aed1db7cbef0efd15862f34d6805b162f83ba885",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 37.23
+    },
+    {
+      "text": "There is more than one of the same transaction on my account.",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "2af8308c78f486a930b393865b886896d9765884598e6b635ad3aea3133fa636",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 33.29
+    },
+    {
+      "text": "I see that I have been charged multiple times for the same transaction.",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "fe1479cfdb5ffb0011612beb24954aa06e2524322e46452977c363470c5554d6",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 35.31
+    },
+    {
+      "text": "It appears that I am being double charged for some items that I have purchased this past week.  Please review and correct.",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "963c65c388204869692f946cb9a02ad3e8c878ff25ab1afad75aa8a41b6c6f02",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 39.64
+    },
+    {
+      "text": "I've been charged more than once for the same transaction",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "199c8b0b79b04351ea75fec9f932593d4395423876bf2bddc01cb901b873e930",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 32.45
+    },
+    {
+      "text": "I have multiple charges on the same transaction.",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "5927da7752e3b8279761f0080138b65d17b111c629c904b22fb75c1b79437831",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 34.43
+    },
+    {
+      "text": "More than one time this week, I have been charged more than once for the same transaction. Please correct the issue and refund the duplicate charges.",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "90c6e4e0875bd09000b606ae66554e638ceabe92f5a2fdfec9826c7ce6cb3518",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 38.0
+    },
+    {
+      "text": "I didn't buy this twice",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "765b98e926973aa5403bb275901b575e923a3e427763e1b2a7cd5628eb679ccb",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 34.57
+    },
+    {
+      "text": "Can you explain why there is a payment showing twice?",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "18383de02ef364eabcce06b7d7f9e82f0b3addce124833bb2fd4358f7ea1db8a",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 32.84
+    },
+    {
+      "text": "Why am I being charged twice fro a restaurant?",
+      "category": "transaction_charged_twice",
+      "expected": "bills",
+      "case_sha256": "bd72861bf5edbc349243f48a8b420036e38bc15cd4d5b529113325ab14819452",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 34.28
+    },
+    {
+      "text": "Where do you get your exchange rates from?",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "42aa9297d67807d0513a42cb01623bde7db31de6e6942b678b13cd9be9bd9896",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 34.38
+    },
+    {
+      "text": "How are you determining your exchange rates?",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "0deece49f6844ef1b36d319f3b10cc279e169b562a663a4c42ff85b0b14199ab",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 35.28
+    },
+    {
+      "text": "What is the exchange rate like on this app?",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "5aacc255e09d9587cd35e5ce14d260dc058c3fdfdee51657e12a294d36852921",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 34.56
+    },
+    {
+      "text": "The exchange rate would be?",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "4d894b0a3104717c6bffe8020656480751cf8f03de645cdd3d2a34ab19cb8680",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 35.01
+    },
+    {
+      "text": "What currencies is an exchange rate calculated in?",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "b931a1f625d69a5d645032a1f60c7bb952adcdbd478003b31f234cd851f3dd43",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 36.07
+    },
+    {
+      "text": "I'm trying to figure out the current exchange rate.",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "3a470a6623831b6851c2a0a185265d9de4d1b2e387efcdd18dbf6e52be13b77d",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 37.6
+    },
+    {
+      "text": "Do you have a list of exchange rates?",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "46d5cec8058279870b250705beed526aae86cf03aecfe1d5ceb5c24b2fde18a9",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 33.86
+    },
+    {
+      "text": "Can you explain your exchange rate policy to me?",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "9471995ee89deaf5cdf59aa997427dd615242979fdbbdd2e458cc5ea01ed32a0",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 36.44
+    },
+    {
+      "text": "Where did your guys exchange rates come from?",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "b4798ab0d0c28e83a784346bda53f71f567b20ffd1abce5d711f779ba32ca9f1",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 43.55
+    },
+    {
+      "text": "when does the rate get determined",
+      "category": "exchange_rate",
+      "expected": "fx_budget",
+      "case_sha256": "1e08ed16371e753b9cead241b8e2a0dfc2d869c9d14bf544752cf8d2c4585f28",
+      "actual": "unsupported",
+      "pass": false,
+      "latency_ms": 32.75
+    }
+  ],
+  "by_category": {
+    "lost_or_stolen_card": {
+      "passed": 0,
+      "total": 10
+    },
+    "compromised_card": {
+      "passed": 0,
+      "total": 10
+    },
+    "transaction_charged_twice": {
+      "passed": 0,
+      "total": 10
+    },
+    "exchange_rate": {
+      "passed": 0,
+      "total": 10
+    }
+  },
+  "no_funds_moved": true,
+  "action_counts": {
+    "sandbox_transfers": 0,
+    "sandbox_card_actions": 0,
+    "sandbox_wealth_orders": 0
+  },
+  "limitations": [
+    "Original English queries; this is a language-shift stress assessment, not Chinese product success rate.",
+    "Application label mapping is authored by this project, not by an independent assessor.",
+    "Public benchmark content may be present in model pretraining; no claim of model-unseen data.",
+    "Only four categories and forty preselected examples; not 77-class accuracy or end-to-end banking reliability."
+  ]
+}

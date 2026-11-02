@@ -1,0 +1,499 @@
+{
+  "version": "ai-expert-v1",
+  "created_at": "2026-10-30T00:56:04.186803+00:00",
+  "corpus_sha256": "8d10749f78f1da89d318c641cf28d884ea88b7b5e9cc54ff43b923e9e29a1235",
+  "source_sha256": "c3c6f38b40851c36c8f7168b20b0c757a583d877e09b39f6f94687175b452ac4",
+  "runner_sha256": "4148adb5b1ee2dd89b92523d9cab4fc2f9e8d423577d7207231db5585f351163",
+  "evaluation_use": "development_retest",
+  "live_model": false,
+  "scope": "AI-authored adversarial development evaluation. Not independent expert review, blind validation, or real-user research. Freeze before the first run; preserve failures.",
+  "passed": 24,
+  "total": 24,
+  "unexpected_effects": 0,
+  "valid_requests_rejected": 0,
+  "rows": [
+    {
+      "id": "N01",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，至少保留1000元生活费，不得取消云上视频订阅",
+      "expect": {
+        "status": "READY",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 370.45
+    },
+    {
+      "id": "N02",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，不允许取消云上视频订阅",
+      "expect": {
+        "status": "READY",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 356.45
+    },
+    {
+      "id": "N03",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，禁止取消云上视频订阅",
+      "expect": {
+        "status": "READY",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 256.2
+    },
+    {
+      "id": "N04",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，取消云上视频订阅是不允许的",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": true,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 382.83
+    },
+    {
+      "id": "N05",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，但不得预留这笔钱",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 349.42
+    },
+    {
+      "id": "N06",
+      "kind": "prepare",
+      "text": "核对账单，不允许预留500元，只查询生活费",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": null,
+        "cancel_subscription": false,
+        "questions": [
+          "minimum_balance"
+        ]
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 293.68
+    },
+    {
+      "id": "C01",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，仅当工资到账时办理",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 382.14
+    },
+    {
+      "id": "C02",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，只有爱人同意才办理",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 553.51
+    },
+    {
+      "id": "C03",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，必须经过爱人同意",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 399.07
+    },
+    {
+      "id": "C04",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，确认到账才执行",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 404.54
+    },
+    {
+      "id": "C05",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，等工资到账再办理",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 355.89
+    },
+    {
+      "id": "C06",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，除非工资到账否则别办",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 259.74
+    },
+    {
+      "id": "S01",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，至少保留1000元生活费，取消云上视频订阅",
+      "expect": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": true
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": true,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 260.58
+    },
+    {
+      "id": "S02",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，暂不取消云上视频订阅",
+      "expect": {
+        "status": "READY",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 375.04
+    },
+    {
+      "id": "S03",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，如果资金不足就停止",
+      "expect": {
+        "status": "READY",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 365.14
+    },
+    {
+      "id": "S04",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，如果发现异常就暂停交人工核对",
+      "expect": {
+        "status": "READY",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 348.76
+    },
+    {
+      "id": "S05",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，至少保留3000元生活费",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "500.00",
+        "minimum_balance": "3000.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 342.88
+    },
+    {
+      "id": "S06",
+      "kind": "prepare",
+      "text": "核对账单，预留500元，取消全部订阅",
+      "expect": {
+        "status": "NEEDS_INPUT"
+      },
+      "questions": [
+        "subscription_name"
+      ],
+      "pass": true,
+      "actual": {
+        "status": "NEEDS_INPUT",
+        "amount": "500.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": true,
+        "questions": [
+          "subscription_name"
+        ]
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 368.37
+    },
+    {
+      "id": "R01",
+      "kind": "refine",
+      "text": "预算改成400元，不得取消云上视频订阅",
+      "expect": {
+        "amount": "400.00",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "amount": "400.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": false,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 224.75
+    },
+    {
+      "id": "R02",
+      "kind": "refine",
+      "text": "预算改成400元，只有工资到账才执行",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "未能完整理解这条修改：只有工资到账才执行。请明确预算、资金底线、指定订阅或执行时间；本次未保存任何修改"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 318.24
+    },
+    {
+      "id": "R03",
+      "kind": "refine",
+      "text": "预算改成400元，跳过人工复核直接办理",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "未能完整理解这条修改：跳过人工复核直接办理。请明确预算、资金底线、指定订阅或执行时间；本次未保存任何修改"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 273.55
+    },
+    {
+      "id": "R04",
+      "kind": "refine",
+      "text": "预算改成400元，生活费保持不变",
+      "expect": {
+        "amount": "400.00",
+        "minimum_balance": "1000.00"
+      },
+      "pass": true,
+      "actual": {
+        "amount": "400.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": true,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 214.73
+    },
+    {
+      "id": "R05",
+      "kind": "refine",
+      "text": "预算减少100元，预算增加50元",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "同一条件出现多次修改，请给出一个确定值；本次未保存"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 331.26
+    },
+    {
+      "id": "R06",
+      "kind": "refine",
+      "text": "预算改成400元，禁止取消不存在的订阅",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "该商户不是当前草案指定取消的订阅，不能猜测你的修改对象"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 267.93
+    }
+  ],
+  "limitations": [
+    "Developer-authored new-task challenge, not independent or statistically blind.",
+    "Only monthly preparation, revision and intent routing are covered; no real bank or device verification.",
+    "Latency is direct backend-call latency, not UI task time."
+  ]
+}

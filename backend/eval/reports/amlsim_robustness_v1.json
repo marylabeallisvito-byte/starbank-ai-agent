@@ -1,0 +1,357 @@
+{
+  "generated_at": "2026-10-27T14:37:52.257908+00:00",
+  "protocol": {
+    "version": "amlsim-robustness-v1",
+    "amount_scales": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "cut": 90,
+    "selection": "All predeclared scales are reported; no model fitting or threshold adjustment.",
+    "label_assumption": "Original synthetic labels retained under uniform amount scaling; not newly verified counterfactual fraud labels."
+  },
+  "protocol_sha256": "d69438cd4ce76b6206819bd72967d98db474d0ca4afd4072167e737225930211",
+  "audit_code_sha256": "bd3af5b8ea5a13f965c8677d6da9d6c7d09e7b651fd57a93c3d91c8b1baac8cd",
+  "model_sha256": "a0838cf1fbc1daf535aa3677bc0200ef8f1615498187f21d0fbe2a96e03a342b",
+  "scenarios": [
+    {
+      "name": "20K_fanin200cycle200.tgz",
+      "archive_sha256": "f187bc5784223cdee137ac603164f7183fd58f114090f39e2a12543b6bf48319",
+      "accounts": 16889,
+      "scales": [
+        {
+          "scale": 0.5,
+          "metrics": {
+            "graph": {
+              "tp": 507,
+              "fp": 0,
+              "tn": 16360,
+              "fn": 22,
+              "precision": 1.0,
+              "recall": 0.958412,
+              "f1": 0.978764,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 517,
+              "fp": 1509,
+              "tn": 14851,
+              "fn": 12,
+              "precision": 0.255183,
+              "recall": 0.977316,
+              "f1": 0.404697,
+              "false_positive_rate": 0.092237
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 0.090118
+          }
+        },
+        {
+          "scale": 1.0,
+          "metrics": {
+            "graph": {
+              "tp": 507,
+              "fp": 0,
+              "tn": 16360,
+              "fn": 22,
+              "precision": 1.0,
+              "recall": 0.958412,
+              "f1": 0.978764,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 526,
+              "fp": 0,
+              "tn": 16360,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.994329,
+              "f1": 0.997156,
+              "false_positive_rate": 0.0
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 0.0
+          }
+        },
+        {
+          "scale": 2.0,
+          "metrics": {
+            "graph": {
+              "tp": 507,
+              "fp": 0,
+              "tn": 16360,
+              "fn": 22,
+              "precision": 1.0,
+              "recall": 0.958412,
+              "f1": 0.978764,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 490,
+              "fp": 0,
+              "tn": 16360,
+              "fn": 39,
+              "precision": 1.0,
+              "recall": 0.926276,
+              "f1": 0.961727,
+              "false_positive_rate": 0.0
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 0.002487
+          }
+        }
+      ]
+    },
+    {
+      "name": "20K_cycle200.tgz",
+      "archive_sha256": "da85ffd26f2c0a082f69b038a9bb5ebd2b6e9c0df15707381aeddcfcb572ae20",
+      "accounts": 17356,
+      "scales": [
+        {
+          "scale": 0.5,
+          "metrics": {
+            "graph": {
+              "tp": 262,
+              "fp": 0,
+              "tn": 17080,
+              "fn": 14,
+              "precision": 1.0,
+              "recall": 0.949275,
+              "f1": 0.973978,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 263,
+              "fp": 1632,
+              "tn": 15448,
+              "fn": 13,
+              "precision": 0.138786,
+              "recall": 0.952899,
+              "f1": 0.242285,
+              "false_positive_rate": 0.09555
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 0.094895
+          }
+        },
+        {
+          "scale": 1.0,
+          "metrics": {
+            "graph": {
+              "tp": 262,
+              "fp": 0,
+              "tn": 17080,
+              "fn": 14,
+              "precision": 1.0,
+              "recall": 0.949275,
+              "f1": 0.973978,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 274,
+              "fp": 0,
+              "tn": 17080,
+              "fn": 2,
+              "precision": 1.0,
+              "recall": 0.992754,
+              "f1": 0.996364,
+              "false_positive_rate": 0.0
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 0.0
+          }
+        },
+        {
+          "scale": 2.0,
+          "metrics": {
+            "graph": {
+              "tp": 262,
+              "fp": 0,
+              "tn": 17080,
+              "fn": 14,
+              "precision": 1.0,
+              "recall": 0.949275,
+              "f1": 0.973978,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 233,
+              "fp": 0,
+              "tn": 17080,
+              "fn": 43,
+              "precision": 1.0,
+              "recall": 0.844203,
+              "f1": 0.915521,
+              "false_positive_rate": 0.0
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 0.002362
+          }
+        }
+      ]
+    },
+    {
+      "name": "20K_fanin200.tgz",
+      "archive_sha256": "e2479ab7a1ecfcd369a7738c855364825561bf9d888d2ad53174e0ed10fd1f1b",
+      "accounts": 17344,
+      "scales": [
+        {
+          "scale": 0.5,
+          "metrics": {
+            "graph": {
+              "tp": 258,
+              "fp": 0,
+              "tn": 17071,
+              "fn": 15,
+              "precision": 1.0,
+              "recall": 0.945055,
+              "f1": 0.971751,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 268,
+              "fp": 1621,
+              "tn": 15450,
+              "fn": 5,
+              "precision": 0.141874,
+              "recall": 0.981685,
+              "f1": 0.247919,
+              "false_positive_rate": 0.094956
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 0.09375
+          }
+        },
+        {
+          "scale": 1.0,
+          "metrics": {
+            "graph": {
+              "tp": 258,
+              "fp": 0,
+              "tn": 17071,
+              "fn": 15,
+              "precision": 1.0,
+              "recall": 0.945055,
+              "f1": 0.971751,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 273,
+              "fp": 0,
+              "tn": 17071,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "false_positive_rate": 0.0
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 0.0
+          }
+        },
+        {
+          "scale": 2.0,
+          "metrics": {
+            "graph": {
+              "tp": 258,
+              "fp": 0,
+              "tn": 17071,
+              "fn": 15,
+              "precision": 1.0,
+              "recall": 0.945055,
+              "f1": 0.971751,
+              "false_positive_rate": 0.0
+            },
+            "amount": {
+              "tp": 272,
+              "fp": 0,
+              "tn": 17071,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.996337,
+              "f1": 0.998165,
+              "false_positive_rate": 0.0
+            }
+          },
+          "changed_decision_fraction": {
+            "graph": 0.0,
+            "amount": 5.8e-05
+          }
+        }
+      ]
+    }
+  ],
+  "overlap": [
+    {
+      "left": "20K_fanin200cycle200.tgz",
+      "right": "20K_cycle200.tgz",
+      "account_ids": {
+        "shared": 20000,
+        "left": 20000,
+        "right": 20000,
+        "share_of_smaller": 1.0
+      },
+      "exact_transaction_tuples": {
+        "shared": 6054,
+        "left": 118874,
+        "right": 116385,
+        "share_of_smaller": 0.052017
+      }
+    },
+    {
+      "left": "20K_fanin200cycle200.tgz",
+      "right": "20K_fanin200.tgz",
+      "account_ids": {
+        "shared": 20000,
+        "left": 20000,
+        "right": 20000,
+        "share_of_smaller": 1.0
+      },
+      "exact_transaction_tuples": {
+        "shared": 4827,
+        "left": 118874,
+        "right": 117996,
+        "share_of_smaller": 0.040908
+      }
+    },
+    {
+      "left": "20K_cycle200.tgz",
+      "right": "20K_fanin200.tgz",
+      "account_ids": {
+        "shared": 20000,
+        "left": 20000,
+        "right": 20000,
+        "share_of_smaller": 1.0
+      },
+      "exact_transaction_tuples": {
+        "shared": 5791,
+        "left": 116385,
+        "right": 117996,
+        "share_of_smaller": 0.049757
+      }
+    }
+  ],
+  "limitations": [
+    "Account ID overlap alone does not establish the same real entity; exact transaction tuple overlap is stronger evidence of shared synthetic background.",
+    "These are diagnostics on already available archives, not new independent tests. No real-bank accuracy is estimated.",
+    "Uniform amount scaling preserves topology and ratios but assumes original labels remain applicable; stress metrics are not validated real-world performance.",
+    "Zero observed false positives in finite synthetic cohorts does not establish zero production risk."
+  ]
+}

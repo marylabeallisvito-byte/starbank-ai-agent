@@ -1,0 +1,656 @@
+{
+  "meta": {
+    "source": "public_disclosure",
+    "degraded": false,
+    "case_id": "CATL-2026-H1-PUBLIC",
+    "case_title": "宁德时代 · 公开披露关系网络",
+    "as_of": "2026-06-30",
+    "published_at": "2026-07-25",
+    "source_title": "2025 年年度报告 + 2026 年半年度报告",
+    "source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-10/f019f96b-b960-410b-b88f-08838a36d81b.PDF",
+    "message": "年度集团构成、半年度股东与母公司投资表均为公开披露；不同关系保留各自报告时点。本案例无银行流水。",
+    "sources": [
+      {
+        "id": "SZSE-2025-AR",
+        "title": "2025 年年度报告",
+        "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-10/f019f96b-b960-410b-b88f-08838a36d81b.PDF",
+        "as_of": "2025-12-31",
+        "published_at": "2026-03-10"
+      },
+      {
+        "id": "CNINFO-2026-H1",
+        "title": "2026 年半年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "published_at": "2026-07-25"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "CATL-300750",
+      "label": "宁德时代新能源科技股份有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "宁德时代",
+        "role": "上市公司",
+        "stock_code": "300750",
+        "source_page": 9,
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "id": "CATL-XMRT",
+      "label": "厦门瑞庭投资有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "厦门瑞庭",
+        "role": "报告列示的控股股东",
+        "source_page": 9,
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "id": "CATL-JIANGSU",
+      "label": "江苏时代新能源科技有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "江苏时代",
+        "role": "集团子公司",
+        "location": "溧阳市",
+        "source_page": 207,
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "id": "CATL-FUDING",
+      "label": "福鼎时代新能源科技有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "福鼎时代",
+        "role": "集团子公司",
+        "location": "福鼎市",
+        "source_page": 207,
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "id": "CATL-HK",
+      "label": "香港时代新能源科技有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "香港时代",
+        "role": "集团子公司",
+        "location": "香港",
+        "source_page": 207,
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "id": "CATL-SICHUAN",
+      "label": "四川时代新能源科技有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "四川时代",
+        "role": "集团子公司",
+        "location": "宜宾市",
+        "source_page": 207,
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "id": "CATL-BRUNP",
+      "label": "广东邦普循环科技有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "广东邦普",
+        "role": "集团子公司",
+        "location": "佛山市",
+        "source_page": 207,
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "id": "CATL-HOLDER-01",
+      "label": "香港中央结算有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "香港结算",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65,
+        "identity_note": "结算或名义持有人；不得据此推断最终受益人"
+      }
+    },
+    {
+      "id": "CATL-HOLDER-02",
+      "label": "黄世霖",
+      "type": "Person",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "黄世霖",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65
+      }
+    },
+    {
+      "id": "CATL-HOLDER-03",
+      "label": "宁波联合创新新能源投资管理合伙企业（有限合伙）",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "宁波联合创新",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65
+      }
+    },
+    {
+      "id": "CATL-HOLDER-04",
+      "label": "HKSCC NOMINEES LIMITED",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "HKSCC",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65,
+        "identity_note": "结算或名义持有人；不得据此推断最终受益人"
+      }
+    },
+    {
+      "id": "CATL-HOLDER-05",
+      "label": "李平",
+      "type": "Person",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "李平",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65
+      }
+    },
+    {
+      "id": "CATL-HOLDER-06",
+      "label": "富泰华工业（深圳）有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "富泰华工业",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65
+      }
+    },
+    {
+      "id": "CATL-HOLDER-07",
+      "label": "UBS AG",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "UBS AG",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65
+      }
+    },
+    {
+      "id": "CATL-HOLDER-08",
+      "label": "北京华鼎新动力股权投资基金（有限合伙）",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "北京华鼎",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65
+      }
+    },
+    {
+      "id": "CATL-HOLDER-09",
+      "label": "赵辉",
+      "type": "Person",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "赵辉",
+        "role": "报告期末前十大股东",
+        "as_of": "2026-06-30",
+        "source_page": 65
+      }
+    },
+    {
+      "id": "CATL-INVESTEE-01",
+      "label": "海口润时新能源有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "海口润时",
+        "role": "母公司财报列示被投资子公司",
+        "as_of": "2026-06-30",
+        "source_page": 178
+      }
+    },
+    {
+      "id": "CATL-INVESTEE-02",
+      "label": "宁德福宁时代新能源有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "宁德福宁",
+        "role": "母公司财报列示被投资子公司",
+        "as_of": "2026-06-30",
+        "source_page": 178
+      }
+    },
+    {
+      "id": "CATL-INVESTEE-03",
+      "label": "厦门新能和科技有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "厦门新能和",
+        "role": "母公司财报列示被投资子公司",
+        "as_of": "2026-06-30",
+        "source_page": 179
+      }
+    },
+    {
+      "id": "CATL-INVESTEE-04",
+      "label": "宁德时代（上海）智能科技有限公司",
+      "type": "Company",
+      "properties": {
+        "data_class": "public_disclosure",
+        "display_name": "上海智能科技",
+        "role": "母公司财报列示被投资子公司",
+        "as_of": "2026-06-30",
+        "source_page": 179
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "CATL-SOURCE-001",
+      "source": "CATL-XMRT",
+      "target": "CATL-300750",
+      "label": "控股股东",
+      "type": "CONTROLLING_SHAREHOLDER",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_record_id": "CATL-2026-H1-p65-xmrt",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "2026 年半年报前十大股东表列示厦门瑞庭持股 22.04%；报告同时披露控股股东未变更。2025 年报释义明确其为控股股东。",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "ratio": 0.2204,
+        "share_count": 1019704949,
+        "ratio_scope": "报告期末持股比例；控股股东身份另由 2025 年报佐证",
+        "corroborating_source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-10/f019f96b-b960-410b-b88f-08838a36d81b.PDF",
+        "corroborating_source_page": 9
+      }
+    },
+    {
+      "id": "CATL-SOURCE-002",
+      "source": "CATL-300750",
+      "target": "CATL-JIANGSU",
+      "label": "集团子公司",
+      "type": "GROUP_SUBSIDIARY",
+      "properties": {
+        "data_class": "public_disclosure",
+        "ratio": 1,
+        "ratio_scope": "报告披露持股比例；不另行推定控制路径",
+        "source_system": "SZSE",
+        "source_record_id": "CATL-2025-AR-p207-jiangsu",
+        "source_page": 207,
+        "source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-10/f019f96b-b960-410b-b88f-08838a36d81b.PDF",
+        "as_of": "2025-12-31",
+        "evidence_text": "企业集团的构成表列示江苏时代，持股比例 100.00%。",
+        "source_title": "宁德时代新能源科技股份有限公司 2025 年年度报告"
+      }
+    },
+    {
+      "id": "CATL-SOURCE-003",
+      "source": "CATL-300750",
+      "target": "CATL-FUDING",
+      "label": "集团子公司",
+      "type": "GROUP_SUBSIDIARY",
+      "properties": {
+        "data_class": "public_disclosure",
+        "ratio": 1,
+        "ratio_scope": "报告披露持股比例；不另行推定控制路径",
+        "source_system": "SZSE",
+        "source_record_id": "CATL-2025-AR-p207-fuding",
+        "source_page": 207,
+        "source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-10/f019f96b-b960-410b-b88f-08838a36d81b.PDF",
+        "as_of": "2025-12-31",
+        "evidence_text": "企业集团的构成表列示福鼎时代，持股比例 100.00%。",
+        "source_title": "宁德时代新能源科技股份有限公司 2025 年年度报告"
+      }
+    },
+    {
+      "id": "CATL-SOURCE-004",
+      "source": "CATL-300750",
+      "target": "CATL-HK",
+      "label": "集团子公司",
+      "type": "GROUP_SUBSIDIARY",
+      "properties": {
+        "data_class": "public_disclosure",
+        "ratio": 1,
+        "ratio_scope": "报告披露持股比例；不另行推定控制路径",
+        "source_system": "SZSE",
+        "source_record_id": "CATL-2025-AR-p207-hk",
+        "source_page": 207,
+        "source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-10/f019f96b-b960-410b-b88f-08838a36d81b.PDF",
+        "as_of": "2025-12-31",
+        "evidence_text": "企业集团的构成表列示香港时代，持股比例 100.00%。",
+        "source_title": "宁德时代新能源科技股份有限公司 2025 年年度报告"
+      }
+    },
+    {
+      "id": "CATL-SOURCE-005",
+      "source": "CATL-300750",
+      "target": "CATL-SICHUAN",
+      "label": "集团子公司",
+      "type": "GROUP_SUBSIDIARY",
+      "properties": {
+        "data_class": "public_disclosure",
+        "ratio": 0.792,
+        "ratio_scope": "报告披露持股比例；不另行推定控制路径",
+        "source_system": "SZSE",
+        "source_record_id": "CATL-2025-AR-p207-sichuan",
+        "source_page": 207,
+        "source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-10/f019f96b-b960-410b-b88f-08838a36d81b.PDF",
+        "as_of": "2025-12-31",
+        "evidence_text": "企业集团的构成表列示四川时代，持股比例 79.20%。",
+        "source_title": "宁德时代新能源科技股份有限公司 2025 年年度报告"
+      }
+    },
+    {
+      "id": "CATL-SOURCE-006",
+      "source": "CATL-300750",
+      "target": "CATL-BRUNP",
+      "label": "集团子公司",
+      "type": "GROUP_SUBSIDIARY",
+      "properties": {
+        "data_class": "public_disclosure",
+        "ratio": 0.6218,
+        "ratio_scope": "报告披露持股比例；不另行推定控制路径",
+        "source_system": "SZSE",
+        "source_record_id": "CATL-2025-AR-p207-brunp",
+        "source_page": 207,
+        "source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-10/f019f96b-b960-410b-b88f-08838a36d81b.PDF",
+        "as_of": "2025-12-31",
+        "evidence_text": "企业集团的构成表列示广东邦普，持股比例 62.18%。",
+        "source_title": "宁德时代新能源科技股份有限公司 2025 年年度报告"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-01",
+      "source": "CATL-HOLDER-01",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-01",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示香港中央结算有限公司持有 894,158,187 股，占总股本 19.33%。",
+        "ratio": 0.19329999999999997,
+        "share_count": 894158187,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动",
+        "identity_note": "结算或名义持有人；不得据此推断最终受益人"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-02",
+      "source": "CATL-HOLDER-02",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-02",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示黄世霖持有 420,388,947 股，占总股本 9.09%。",
+        "ratio": 0.0909,
+        "share_count": 420388947,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-03",
+      "source": "CATL-HOLDER-03",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-03",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示宁波联合创新新能源投资管理合伙企业（有限合伙）持有 226,220,608 股，占总股本 4.89%。",
+        "ratio": 0.0489,
+        "share_count": 226220608,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-04",
+      "source": "CATL-HOLDER-04",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-04",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示HKSCC NOMINEES LIMITED持有 218,291,507 股，占总股本 4.72%。",
+        "ratio": 0.0472,
+        "share_count": 218291507,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动",
+        "identity_note": "结算或名义持有人；不得据此推断最终受益人"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-05",
+      "source": "CATL-HOLDER-05",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-05",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示李平持有 197,460,277 股，占总股本 4.27%。",
+        "ratio": 0.042699999999999995,
+        "share_count": 197460277,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-06",
+      "source": "CATL-HOLDER-06",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-06",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示富泰华工业（深圳）有限公司持有 28,707,235 股，占总股本 0.62%。",
+        "ratio": 0.0062,
+        "share_count": 28707235,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-07",
+      "source": "CATL-HOLDER-07",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-07",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示UBS AG持有 27,366,628 股，占总股本 0.59%。",
+        "ratio": 0.0059,
+        "share_count": 27366628,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-08",
+      "source": "CATL-HOLDER-08",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-08",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示北京华鼎新动力股权投资基金（有限合伙）持有 23,892,840 股，占总股本 0.52%。",
+        "ratio": 0.0052,
+        "share_count": 23892840,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动"
+      }
+    },
+    {
+      "id": "CATL-HOLDING-09",
+      "source": "CATL-HOLDER-09",
+      "target": "CATL-300750",
+      "label": "报告期末持股",
+      "type": "DISCLOSED_HOLDING",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p65-holder-09",
+        "source_page": 65,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "前十大股东表列示赵辉持有 21,211,532 股，占总股本 0.46%。",
+        "ratio": 0.0046,
+        "share_count": 21211532,
+        "ratio_scope": "报告期末持股比例；不推定实际控制或一致行动"
+      }
+    },
+    {
+      "id": "CATL-INVESTMENT-01",
+      "source": "CATL-300750",
+      "target": "CATL-INVESTEE-01",
+      "label": "母公司对子公司投资",
+      "type": "PARENT_INVESTMENT",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p178-investee-01",
+        "source_page": 178,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "母公司长期股权投资附注列示海口润时新能源有限公司期末账面价值 10,000,037 千元。",
+        "book_value_thousand_cny": 10000037,
+        "amount_scope": "母公司长期股权投资账面价值，单位千元；不是资金流水"
+      }
+    },
+    {
+      "id": "CATL-INVESTMENT-02",
+      "source": "CATL-300750",
+      "target": "CATL-INVESTEE-02",
+      "label": "母公司对子公司投资",
+      "type": "PARENT_INVESTMENT",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p178-investee-02",
+        "source_page": 178,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "母公司长期股权投资附注列示宁德福宁时代新能源有限公司期末账面价值 9,335,614 千元。",
+        "book_value_thousand_cny": 9335614,
+        "amount_scope": "母公司长期股权投资账面价值，单位千元；不是资金流水"
+      }
+    },
+    {
+      "id": "CATL-INVESTMENT-03",
+      "source": "CATL-300750",
+      "target": "CATL-INVESTEE-03",
+      "label": "母公司对子公司投资",
+      "type": "PARENT_INVESTMENT",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p179-investee-03",
+        "source_page": 179,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "母公司长期股权投资附注列示厦门新能和科技有限公司期末账面价值 2,975,000 千元。",
+        "book_value_thousand_cny": 2975000,
+        "amount_scope": "母公司长期股权投资账面价值，单位千元；不是资金流水"
+      }
+    },
+    {
+      "id": "CATL-INVESTMENT-04",
+      "source": "CATL-300750",
+      "target": "CATL-INVESTEE-04",
+      "label": "母公司对子公司投资",
+      "type": "PARENT_INVESTMENT",
+      "properties": {
+        "data_class": "public_disclosure",
+        "source_system": "CNINFO",
+        "source_title": "宁德时代新能源科技股份有限公司 2026 年半年度报告",
+        "source_record_id": "CATL-2026-H1-p179-investee-04",
+        "source_page": 179,
+        "source_url": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+        "as_of": "2026-06-30",
+        "evidence_text": "母公司长期股权投资附注列示宁德时代（上海）智能科技有限公司期末账面价值 2,000,250 千元。",
+        "book_value_thousand_cny": 2000250,
+        "amount_scope": "母公司长期股权投资账面价值，单位千元；不是资金流水"
+      }
+    }
+  ]
+}

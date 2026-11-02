@@ -1,0 +1,436 @@
+{
+  "generated_at": "2026-10-27T09:02:39.881385+00:00",
+  "protocol": {
+    "version": "amlsim-temporal-v1",
+    "source_commit": "7338a4bcb1af9bcfea2201ad7daccfe2a4d569ca",
+    "source_url": "https://raw.githubusercontent.com/IBM/AMLSim/7338a4bcb1af9bcfea2201ad7daccfe2a4d569ca/sample/20K_fanin200cycle200.tgz",
+    "development_end_step": 90,
+    "simulation_step_hours": 24,
+    "step_mapping_note": "One simulation step is mapped to 24 hours for detector compatibility; this is an evaluation convention, not verified wall-clock time.",
+    "baseline_amount_candidates": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "graph_candidates": [
+      {
+        "min_amount": 100,
+        "window_hours": 72,
+        "min_sources": 3,
+        "fast_ratio": 0.9
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 72,
+        "min_sources": 3,
+        "fast_ratio": 0.9
+      },
+      {
+        "min_amount": 300,
+        "window_hours": 72,
+        "min_sources": 3,
+        "fast_ratio": 0.9
+      },
+      {
+        "min_amount": 100,
+        "window_hours": 120,
+        "min_sources": 4,
+        "fast_ratio": 0.9
+      }
+    ],
+    "selection": "Highest development F1; first candidate wins ties. Test labels never select parameters.",
+    "cohort": "Active accounts in each interval. Positives need isFraud=1 and a known fraudStep within that interval. isFraud=0 accounts are negatives. Other positive accounts are excluded, never relabeled as normal.",
+    "scope": "One external, author-generated synthetic sample. Transductive temporal evaluation; not independent account groups, repeated seeds, real fraud performance or the full banking authorization policy.",
+    "archive_sha256": "f187bc5784223cdee137ac603164f7183fd58f114090f39e2a12543b6bf48319",
+    "baseline_scope": "Flag a source account when any outgoing transaction exceeds a development-selected threshold; simple functional reference, not a state-of-the-art fraud model."
+  },
+  "protocol_sha256": "cbb029ba1e7343282ff088cb6a470c4ab9d49b79a565c37c42924d485c5d6f2b",
+  "evaluator_sha256": "63309bcae1e6cbf936dca1d14f0bf3650f79a1461773873d3d17efb920601416",
+  "detector_sha256": "7765fc27ae0795f955c7ecca080f6e29c5da44f25b0592767638d061f1f3cb4c",
+  "data_kind": "external_author_synthetic",
+  "source_commit": "7338a4bcb1af9bcfea2201ad7daccfe2a4d569ca",
+  "archive_sha256": "f187bc5784223cdee137ac603164f7183fd58f114090f39e2a12543b6bf48319",
+  "source_url": "https://raw.githubusercontent.com/IBM/AMLSim/7338a4bcb1af9bcfea2201ad7daccfe2a4d569ca/sample/20K_fanin200cycle200.tgz",
+  "license": "Apache-2.0 (repository)",
+  "nodes": 20000,
+  "transactions": 120558,
+  "positive_nodes_in_csv": 1804,
+  "positive_nodes_without_known_time": 906,
+  "development": {
+    "steps": [
+      0,
+      90
+    ],
+    "transactions": 78940,
+    "accounts": 18495,
+    "positives": 369,
+    "trials": [
+      {
+        "family": "amount_only",
+        "config": 100,
+        "metrics": {
+          "tp": 367,
+          "fp": 17943,
+          "tn": 183,
+          "fn": 2,
+          "precision": 0.020044,
+          "recall": 0.99458,
+          "f1": 0.039295,
+          "false_positive_rate": 0.989904
+        }
+      },
+      {
+        "family": "amount_only",
+        "config": 200,
+        "metrics": {
+          "tp": 236,
+          "fp": 10728,
+          "tn": 7398,
+          "fn": 133,
+          "precision": 0.021525,
+          "recall": 0.639566,
+          "f1": 0.041648,
+          "false_positive_rate": 0.591857
+        }
+      },
+      {
+        "family": "amount_only",
+        "config": 300,
+        "metrics": {
+          "tp": 156,
+          "fp": 7178,
+          "tn": 10948,
+          "fn": 213,
+          "precision": 0.021271,
+          "recall": 0.422764,
+          "f1": 0.040504,
+          "false_positive_rate": 0.396006
+        }
+      },
+      {
+        "family": "amount_only",
+        "config": 400,
+        "metrics": {
+          "tp": 53,
+          "fp": 3619,
+          "tn": 14507,
+          "fn": 316,
+          "precision": 0.014434,
+          "recall": 0.143631,
+          "f1": 0.026231,
+          "false_positive_rate": 0.199658
+        }
+      },
+      {
+        "family": "amount_only",
+        "config": 500,
+        "metrics": {
+          "tp": 32,
+          "fp": 1858,
+          "tn": 16268,
+          "fn": 337,
+          "precision": 0.016931,
+          "recall": 0.086721,
+          "f1": 0.028331,
+          "false_positive_rate": 0.102505
+        }
+      },
+      {
+        "family": "graph_patterns",
+        "config": {
+          "min_amount": 100,
+          "window_hours": 72,
+          "min_sources": 3,
+          "fast_ratio": 0.9
+        },
+        "metrics": {
+          "tp": 200,
+          "fp": 6290,
+          "tn": 11836,
+          "fn": 169,
+          "precision": 0.030817,
+          "recall": 0.542005,
+          "f1": 0.058318,
+          "false_positive_rate": 0.347015
+        }
+      },
+      {
+        "family": "graph_patterns",
+        "config": {
+          "min_amount": 200,
+          "window_hours": 72,
+          "min_sources": 3,
+          "fast_ratio": 0.9
+        },
+        "metrics": {
+          "tp": 109,
+          "fp": 3104,
+          "tn": 15022,
+          "fn": 260,
+          "precision": 0.033925,
+          "recall": 0.295393,
+          "f1": 0.06086,
+          "false_positive_rate": 0.171246
+        }
+      },
+      {
+        "family": "graph_patterns",
+        "config": {
+          "min_amount": 300,
+          "window_hours": 72,
+          "min_sources": 3,
+          "fast_ratio": 0.9
+        },
+        "metrics": {
+          "tp": 61,
+          "fp": 1715,
+          "tn": 16411,
+          "fn": 308,
+          "precision": 0.034347,
+          "recall": 0.165312,
+          "f1": 0.056876,
+          "false_positive_rate": 0.094615
+        }
+      },
+      {
+        "family": "graph_patterns",
+        "config": {
+          "min_amount": 100,
+          "window_hours": 120,
+          "min_sources": 4,
+          "fast_ratio": 0.9
+        },
+        "metrics": {
+          "tp": 220,
+          "fp": 7719,
+          "tn": 10407,
+          "fn": 149,
+          "precision": 0.027711,
+          "recall": 0.596206,
+          "f1": 0.052961,
+          "false_positive_rate": 0.425852
+        }
+      }
+    ]
+  },
+  "test": {
+    "steps": [
+      91,
+      149
+    ],
+    "transactions": 41618,
+    "accounts": 16889,
+    "positives": 529,
+    "excluded_positive_accounts": 1220,
+    "amount_only": {
+      "config": 200,
+      "tp": 231,
+      "fp": 7585,
+      "tn": 8775,
+      "fn": 298,
+      "precision": 0.029555,
+      "recall": 0.436673,
+      "f1": 0.055362,
+      "false_positive_rate": 0.463631
+    },
+    "graph_patterns": {
+      "config": {
+        "min_amount": 200,
+        "window_hours": 72,
+        "min_sources": 3,
+        "fast_ratio": 0.9
+      },
+      "tp": 77,
+      "fp": 1352,
+      "tn": 15008,
+      "fn": 452,
+      "precision": 0.053884,
+      "recall": 0.145558,
+      "f1": 0.078652,
+      "false_positive_rate": 0.082641
+    }
+  },
+  "examples": [
+    {
+      "account_id": "6407",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78941",
+        "AMLSIM-TX-82318",
+        "AMLSIM-TX-83617",
+        "AMLSIM-TX-86314",
+        "AMLSIM-TX-88454",
+        "AMLSIM-TX-92033",
+        "AMLSIM-TX-96796"
+      ],
+      "label_in_test_cohort": 0,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "19609",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78945",
+        "AMLSIM-TX-81811",
+        "AMLSIM-TX-82616",
+        "AMLSIM-TX-91117",
+        "AMLSIM-TX-91157",
+        "AMLSIM-TX-92778",
+        "AMLSIM-TX-95279",
+        "AMLSIM-TX-96097",
+        "AMLSIM-TX-97800",
+        "AMLSIM-TX-99154",
+        "AMLSIM-TX-100080",
+        "AMLSIM-TX-105444"
+      ],
+      "label_in_test_cohort": null,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "9992",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78946",
+        "AMLSIM-TX-79846",
+        "AMLSIM-TX-80382",
+        "AMLSIM-TX-81045",
+        "AMLSIM-TX-81070",
+        "AMLSIM-TX-81319",
+        "AMLSIM-TX-81325",
+        "AMLSIM-TX-81561",
+        "AMLSIM-TX-81644",
+        "AMLSIM-TX-82553",
+        "AMLSIM-TX-83008",
+        "AMLSIM-TX-83598"
+      ],
+      "label_in_test_cohort": null,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "9980",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78949",
+        "AMLSIM-TX-79611",
+        "AMLSIM-TX-80529",
+        "AMLSIM-TX-81098",
+        "AMLSIM-TX-81774",
+        "AMLSIM-TX-82448",
+        "AMLSIM-TX-83293",
+        "AMLSIM-TX-84038",
+        "AMLSIM-TX-84916",
+        "AMLSIM-TX-84976",
+        "AMLSIM-TX-86272",
+        "AMLSIM-TX-86711"
+      ],
+      "label_in_test_cohort": null,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "8949",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78951",
+        "AMLSIM-TX-80520",
+        "AMLSIM-TX-88136",
+        "AMLSIM-TX-89609",
+        "AMLSIM-TX-93362",
+        "AMLSIM-TX-102027",
+        "AMLSIM-TX-102810",
+        "AMLSIM-TX-106485",
+        "AMLSIM-TX-107344",
+        "AMLSIM-TX-108759"
+      ],
+      "label_in_test_cohort": 0,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "5163",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78954",
+        "AMLSIM-TX-87339",
+        "AMLSIM-TX-91292",
+        "AMLSIM-TX-99932",
+        "AMLSIM-TX-104176"
+      ],
+      "label_in_test_cohort": 0,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "17800",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78955",
+        "AMLSIM-TX-79142",
+        "AMLSIM-TX-79626",
+        "AMLSIM-TX-79645",
+        "AMLSIM-TX-79685",
+        "AMLSIM-TX-80613",
+        "AMLSIM-TX-89166",
+        "AMLSIM-TX-89235",
+        "AMLSIM-TX-90230",
+        "AMLSIM-TX-92475",
+        "AMLSIM-TX-98025",
+        "AMLSIM-TX-109502"
+      ],
+      "label_in_test_cohort": 1,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "15054",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78957",
+        "AMLSIM-TX-83279",
+        "AMLSIM-TX-84427",
+        "AMLSIM-TX-97239",
+        "AMLSIM-TX-98694",
+        "AMLSIM-TX-108279",
+        "AMLSIM-TX-111324"
+      ],
+      "label_in_test_cohort": 0,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "8712",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78966",
+        "AMLSIM-TX-89245",
+        "AMLSIM-TX-97469",
+        "AMLSIM-TX-100885",
+        "AMLSIM-TX-101575",
+        "AMLSIM-TX-104651"
+      ],
+      "label_in_test_cohort": 0,
+      "source_scope": "incident edges for inspection; not all are causal"
+    },
+    {
+      "account_id": "7895",
+      "pattern": "快进快出",
+      "source_ids": [
+        "AMLSIM-TX-78974",
+        "AMLSIM-TX-87060",
+        "AMLSIM-TX-100603",
+        "AMLSIM-TX-101295",
+        "AMLSIM-TX-104228",
+        "AMLSIM-TX-105558"
+      ],
+      "label_in_test_cohort": 0,
+      "source_scope": "incident edges for inspection; not all are causal"
+    }
+  ],
+  "runtime_seconds": 5.094,
+  "limitations": [
+    "External author's synthetic sample, not real bank data; one archive, no independent seed replicates.",
+    "Temporal transductive split: accounts can recur; all feature edges stay inside their time interval.",
+    "Labels and fraudStep are used only for cohort construction and evaluation, not detector inputs.",
+    "Unknown fraud timestamps and pre-existing positives are excluded from test, not treated as normal.",
+    "Simulation steps are mapped to days by convention; values retain dataset units and are not CNY.",
+    "Evaluates existing rapid-flow and fan-in/out rules, not device signals or the full transfer permission policy.",
+    "Upstream metadata says 1803 positive nodes; actual CSV contains 1804. This report uses CSV labels without changing them."
+  ]
+}

@@ -1,0 +1,79 @@
+import { useEffect, useRef, useState } from 'react'
+import { ArrowRight, ArrowUpRight, Check, CheckCheck, Clock3, FileCheck2, Fingerprint, FlaskConical, GitBranch, LoaderCircle, RefreshCw, ShieldCheck } from 'lucide-react'
+import { request } from './api'
+import DataConnections from './DataConnections'
+import ExternalRouting from './ExternalRouting'
+import EvidenceNetwork from './EvidenceNetwork'
+import './evidence.css'
+
+export type GraphEvidence = {
+  source_status?: 'missing' | 'fresh' | 'expired'; scenario?: string | null; authorization_usable?: boolean; recipient_id: string; revision: string; coverage: string; observed_at: string | null; expires_at: string | null
+  decision: 'standard' | 'verify' | 'hold' | 'unavailable'; summary: string; generation: string; policy_version: string
+  graph: { nodes: { id: string; labels: string[]; properties: { name: string } }[]; edges: { id: string; source: string; target: string; type: string; properties: { date: string; amount?: number } }[] }
+  findings: { code: string; title: string; source_ids: string[]; explanation: string }[]
+}
+type Narrative = { mode: string; revision: string; paragraphs: { text: string; source_ids: string[] }[] }
+type EvalCase = { id: string; category: string; text: string; expected: string; actual: { kind: string }; pass: boolean; latency_ms: number }
+type Evaluation = {
+  generated_at: string; corpus_version: string; corpus_sha256: string; source_sha256: string
+  environment: { live_model: boolean; model: string | null; python: string; platform: string }
+  intent: { passed: number; total: number; p50_ms: number; p95_ms: number; cases: EvalCase[] }
+  regression: { passed: number; total: number; cases: { id: string; pass: boolean }[] }
+  interpretation_side_effects: { no_funds_moved: boolean }
+  comparison: { cases: { scenario: string; permission_only_reference: string; actual_graph_gate: string; expected: string }[] }
+  limitations: string[]
+}
+const decisions = { standard: '按常规权限办理', verify: '升级设备强验证', hold: '停止当前转账', unavailable: '等待来源更新' }
+const scenarioNames: Record<string, string> = { normal: '独立设备', shared: '设备共用', layered: '组合异常' }
+const date = (v: string | null) => v ? new Date(v).toLocaleString('zh-CN', { hour12: false }) : '尚未加载来源'
+
+export function EvidenceSummary({ report }: { report: GraphEvidence }) {
+  const missing = report.coverage === 'none'
+  return <div className={`evi-summary ${missing ? 'missing' : report.decision}`}><ShieldCheck size={18} /><div><strong>{missing ? '尚未完成图谱核查' : decisions[report.decision]}</strong><p>{missing ? '当前没有关联来源。基础金额权限仍适用，不能据此判断收款人安全。' : report.summary}</p><small>{report.coverage === 'none' ? '外部图谱未覆盖' : '合成图谱 · 证据绑定模板解释'} · {report.policy_version}</small></div></div>
+}
+
+export default function EvidenceLab({ ready, onPreview, initialSection, onLedgerChange, initialView = 'evidence' }: { ready: boolean; initialView?: 'evidence' | 'evaluation' | 'sources'; initialSection?: string; onLedgerChange?: () => Promise<void>; onPreview: (recipient: string) => void }) {
+  const [narrative, setNarrative] = useState<Narrative | null>(null); const [explaining, setExplaining] = useState(false)
+  const [view, setView] = useState<'evidence' | 'evaluation' | 'sources'>(initialView)
+  const [recipient, setRecipient] = useState('li'); const [report, setReport] = useState<GraphEvidence | null>(null)
+  const [evaluation, setEvaluation] = useState<Evaluation | null>(null); const [selected, setSelected] = useState<string[]>([])
+  const [busy, setBusy] = useState(false); const [error, setError] = useState<string | null>(null)
+  const generation = useRef(0)
+  const [clock, setClock] = useState(() => Date.now())
+  useEffect(() => { const timer = window.setInterval(() => setClock(Date.now()), 1000); return () => window.clearInterval(timer) }, [])
+  const locallyExpired = Boolean(report?.expires_at && new Date(report.expires_at).getTime() <= clock)
+  const visibleReport = report && locallyExpired ? { ...report, source_status: 'expired' as const, decision: 'unavailable' as const, summary: '来源有效期已结束。历史关系仍可查阅；重新生成模拟来源后，才能重新预览与授权。' } : report
+  useEffect(() => {
+    if (!ready) return
+    const version = ++generation.current
+    let active = true
+    request<GraphEvidence>(`/evidence/${recipient}`).then(v => { if (active && version === generation.current) setReport(v) }).catch(e => { if (active && version === generation.current) setError(e.message) })
+    return () => { active = false }
+  }, [ready, recipient])
+  useEffect(() => { if (!ready || view !== 'evaluation') return; let active = true; request<Evaluation>('/evaluation/report').then(v => { if (active) setEvaluation(v) }).catch(e => { if (active) setError(String(e.message)) }); return () => { active = false } }, [ready, view])
+  async function load(scenario?: string) {
+    const version = ++generation.current
+    setBusy(true); setError(null)
+    try { const value = await (scenario ? request<GraphEvidence>('/evidence-fixtures', 'POST', { scenario, recipient_id: recipient }) : request<GraphEvidence>(`/evidence/${recipient}`)); if (version === generation.current) { setReport(value); setClock(Date.now()); setSelected([]); setNarrative(null) } }
+    catch (e) { if (version === generation.current) setError(e instanceof Error ? e.message : '来源读取失败') }
+    finally { if (version === generation.current) setBusy(false) }
+  }
+  async function explain(focus: string) {
+    if (!report) return
+    const version = generation.current
+    setExplaining(true); setError(null)
+    try { const value = await request<Narrative>(`/evidence/${recipient}/explain`, 'POST', { revision: report.revision, focus }); if (generation.current === version) setNarrative(value) }
+    catch (e) { if (generation.current === version) setError(e instanceof Error ? e.message : '讲解暂不可用') }
+    finally { setExplaining(false) }
+  }
+  return <div className="evi-page"><div className="evi-switch" aria-label="切换证据与评测"><button className={view === 'evidence' ? 'active' : ''} onClick={() => { setView('evidence'); setError(null) }}><GitBranch size={15} />关联证据</button><button className={view === 'evaluation' ? 'active' : ''} onClick={() => { setView('evaluation'); setError(null) }}><FlaskConical size={15} />评测档案</button><button className={view === 'sources' ? 'active' : ''} onClick={() => { setView('sources'); setError(null) }}><FileCheck2 size={15} />数据连接</button></div>
+    <header className="evi-heading"><span className="atlas-overline">{view === 'evidence' ? 'BEHIND EVERY DECISION' : view === 'sources' ? 'CONNECTED TO WHAT MATTERS' : 'MEASURED. NOT ASSUMED.'}</span><h1>{view === 'evidence' ? <>每个决定，<br /><em>都有来处。</em></> : view === 'sources' ? <>连接世界，<br /><em>保持边界。</em></> : <>把可信，<br /><em>交给验证。</em></>}</h1><p>{view === 'evidence' ? '从单笔金额，看到背后的关联。每条信号都能回到来源，每次授权都绑定当时的证据。' : view === 'sources' ? '官方公开信息、第三方测试接口、外部合成样本。清楚知道每份数据从哪里来，能够支持什么判断。' : '记录实际结果、测量范围与失败样本。这里的数字来自可复现的隔离评测，不代表真实银行环境的准确率。'}</p></header>
+    {error && <div className="atlas-error evi-recovery" role="alert"><span>{error}</span><button className="atlas-button" disabled={busy || !ready} onClick={() => view === 'evaluation' ? request<Evaluation>('/evaluation/report').then(v => { setEvaluation(v); setError(null) }).catch(e => setError(e.message)) : load()}>重新读取</button></div>}
+    {view === 'sources' ? <DataConnections ready={ready} initialSection={initialSection} onLedgerChange={onLedgerChange} /> : view === 'evidence' ? <><div className="evi-scenario"><div><span className="atlas-overline">SANDBOX SCENARIOS</span><h2>同一笔 ¥80，不同的关联。</h2><p>选择后会更新当前会话的合成来源，已有转账预览需重新授权。</p></div><label>模拟收款人<select value={recipient} disabled={busy || explaining} onChange={e => { setRecipient(e.target.value); setReport(null); setSelected([]); setError(null); setNarrative(null) }}><option value="li">李老师 · 9921</option><option value="mom">妈妈 · 2388</option><option value="chen">陈晨 · 6102</option></select></label></div>
+      <div className="evi-scenario-buttons">{['normal', 'shared', 'layered'].map((s, i) => <button key={s} aria-pressed={report?.scenario === s} disabled={busy || !ready || explaining} onClick={() => load(s)}><span>0{i + 1}</span>{scenarioNames[s]}<ArrowUpRight size={15} /></button>)}</div>
+      {report ? <><div className={`evi-source-status ${visibleReport?.source_status ?? (report.coverage === 'none' ? 'missing' : 'fresh')}`} role="status"><div><strong>{locallyExpired || report.source_status === 'expired' ? '来源已过期 · 历史快照可查阅' : report.coverage === 'none' ? '尚未加载来源 · 未完成图谱核查' : '来源完整 · 当前可用于沙箱核查'}</strong><p>{locallyExpired || report.source_status === 'expired' ? '重新读取不会延长有效期。重新生成会创建新版本，已有授权需重新确认。' : report.coverage === 'none' ? '先选择一种合成情境。不会自动补入模拟数据或拼接外部身份。' : `采集于 ${date(report.observed_at)} · 有效期至 ${date(report.expires_at)}`}</p></div>{(locallyExpired || report.source_status === 'expired') && report.scenario && <button className="atlas-button dark" disabled={busy || explaining} onClick={() => load(report.scenario!)}><RefreshCw size={15} />重新生成模拟来源</button>}</div><EvidenceNetwork key={`${recipient}-${report.revision}`} report={visibleReport!} selected={selected} onSelect={setSelected} /><EvidenceSummary report={visibleReport!} /><section className="evi-narrative"><div className="evi-narrative-heading"><span>✳</span><div><strong>让关联，变得好理解。</strong><p>从检索到的证据组织讲解；模型不生成新事实，也不能更改执行权限。</p></div></div><div className="evi-question-buttons">{[['evidence', '为什么出现这个信号？'], ['authorization', '会怎样影响转账？'], ['coverage', '还存在哪些信息边界？']].map(([focus, label]) => <button key={focus} disabled={explaining || busy || report.coverage === 'none'} onClick={() => explain(focus)}>{explaining ? <LoaderCircle size={13} className="spin" /> : <ArrowUpRight size={13} />}{label}</button>)}</div>{narrative && narrative.revision === report.revision && <div className="evi-narrative-answer" aria-live="polite"><span className="atlas-overline">{narrative.mode === 'model_organized_verified_claims' ? '模型编排 · 服务端事实与引用校验' : '确定性证据讲解 · 已安全回退'}</span>{narrative.paragraphs.map((p, i) => <div key={i}><p>{p.text}</p>{p.source_ids.map(id => <code key={id}>{id}</code>)}</div>)}</div>}</section><div className="evi-detail-grid"><section><div className="evi-section-title"><span className="atlas-overline">RETRIEVED EVIDENCE</span><button className="atlas-icon-button" aria-label="重新读取证据" disabled={busy} onClick={() => load()}><RefreshCw size={15} className={busy ? 'spin' : ''} /></button></div><h2>判断，落在证据上。</h2>{report.findings.length ? report.findings.map((finding, i) => <article className="evi-finding" key={finding.code}><button aria-pressed={selected.join() === finding.source_ids.join()} onClick={() => setSelected(finding.source_ids)}><span>0{i + 1}</span><strong>{finding.title}</strong><ArrowUpRight size={16} /></button><p>{finding.explanation}</p><div>{finding.source_ids.map(id => <code key={id}>{id}</code>)}</div></article>) : <p className="evi-muted">{report.coverage === 'none' ? '当前没有可核查的来源，尚未形成关联判断。' : '当前快照没有规则命中。来源覆盖范围有限，不能据此推断不存在其他风险。'}</p>}
+      <details className="evi-sources"><summary>查看 {report.graph.edges.length} 条原始来源记录</summary>{report.graph.edges.map(edge => <div key={edge.id}><code>{edge.id}</code><p>{edge.source} → {edge.target} · {edge.type}{edge.properties.amount ? ` · ¥${edge.properties.amount}` : ''}</p><time>{date(edge.properties.date)}</time></div>)}</details></section><aside className="evi-provenance"><FileCheck2 size={25} /><h3>这一刻的判断，<br />被完整保留。</h3><dl><div><dt>来源范围</dt><dd>当前会话 · 合成银行关系图</dd></div><div><dt>采集时间</dt><dd>{date(report.observed_at)}</dd></div><div><dt>有效期至</dt><dd>{date(report.expires_at)}</dd></div><div><dt>证据版本摘要</dt><dd><code>{report.revision.slice(0, 24)}…</code></dd></div></dl><p>转账预览记录完整证据快照。执行时再次读取，来源变化、过期或损坏都会停止办理。</p><button className="atlas-button dark" disabled={busy || !ready || locallyExpired || report.decision === 'unavailable' || report.decision === 'hold' || report.coverage === 'none'} onClick={() => onPreview(recipient)}>预览 ¥80 转账 <ArrowRight size={16} /></button><small>{report.decision === 'hold' ? '组合异常已停止当前转账，请先核对来源。' : '需要有效来源；预览不会扣款，执行仍需确认或强验证。'}</small><button className="atlas-text-button" disabled={busy || explaining || report.coverage === 'none'} onClick={() => load('clear')}>清除当前模拟来源</button></aside></div></> : <div className="evi-loading">{error ? '来源暂不可用，请切换情境或重新进入页面重试。' : <><LoaderCircle className="spin" />正在读取当前会话来源</>}</div>}
+      <div className="evi-principles"><div><GitBranch size={19} /><strong>有边界地检索</strong><p>只读取已验证联系人在当前会话中的子图，不执行模型生成的查询。</p></div><div><Fingerprint size={19} /><strong>证据绑定授权</strong><p>图谱信号进入服务端策略；提示词与设备签名都不能覆盖组合异常拦截。</p></div><div><Clock3 size={19} /><strong>承认信息边界</strong><p>当前使用合成图谱与确定性解释模板，尚未接入真实银行风险数据。</p></div></div></> : evaluation ? <><ExternalRouting /><div className="evi-report-meta"><span><i />已生成的实测报告</span><time>{date(evaluation.generated_at)}</time></div><div className="evi-metrics"><article><CheckCheck size={20} /><strong>{evaluation.regression.passed}<small> / {evaluation.regression.total}</small></strong><span>安全与业务回归通过</span></article><article><GitBranch size={20} /><strong>{evaluation.intent.passed}<small> / {evaluation.intent.total}</small></strong><span>固定合成意图与槽位匹配</span></article><article><ShieldCheck size={20} /><strong>{evaluation.interpretation_side_effects.no_funds_moved ? '未动账' : '检测异常'}</strong><span>仅解释意图时的资金副作用检查</span></article></div><section className="evi-evaluation-block"><span className="atlas-overline">A CONTROLLED POLICY COMPARISON</span><h2>图谱，实际改变了什么？</h2><p>同一已知联系人、新会话、转账 ¥80。金额权限参考规则均为黄色；加入关联证据后，服务端实际返回以下结果。这是三个人工合成情境的功能对照。</p><div className="evi-comparison">{evaluation.comparison.cases.map(row => <article key={row.scenario}><span>{scenarioNames[row.scenario]}</span><div><small>仅金额权限参考</small><strong>用户确认</strong></div><ArrowRight size={18} /><div><small>当前图谱策略实测</small><strong>{row.actual_graph_gate === 'yellow' ? '用户确认' : row.actual_graph_gate === 'red' ? '设备强验证' : row.actual_graph_gate === 'hold' ? '停止转账' : row.actual_graph_gate}</strong></div>{row.actual_graph_gate === row.expected && <Check size={16} />}</article>)}</div></section>
+      <section className="evi-evaluation-block"><span className="atlas-overline">EVERY CASE, INCLUDING THE FAILURES</span><h2>让结果，经得起展开。</h2><p>{evaluation.environment.live_model ? `规则优先 + ${evaluation.environment.model} 补充理解` : '仅规则模式'} · {evaluation.corpus_version} · Python {evaluation.environment.python} / {evaluation.environment.platform}</p><div className="evi-latency"><span>解释耗时 P50 <b>{evaluation.intent.p50_ms} ms</b></span><span>P95 <b>{evaluation.intent.p95_ms} ms</b></span><small>本机 Python 直接调用，非 HTTP / 页面端到端耗时</small></div><div className="evi-case-list">{evaluation.intent.cases.map(row => <details key={row.id}><summary><span className={row.pass ? 'passed' : 'failed'}>{row.pass ? '通过' : '未通过'}</span><code>{row.id}</code><span>{row.text}</span><span>{row.latency_ms} ms</span></summary><p>预期：{row.expected} · 实际：{row.actual.kind} · 分组：{row.category}</p></details>)}</div><details className="evi-sources"><summary>展开全部 {evaluation.regression.total} 项业务与安全回归</summary>{evaluation.regression.cases.map(row => <div key={row.id}><span>{row.pass ? '✓ 通过' : '× 失败'}</span><code>{row.id}</code></div>)}</details><div className="evi-hashes"><span>语料 SHA-256<code>{evaluation.corpus_sha256}</code></span><span>源码 SHA-256<code>{evaluation.source_sha256}</code></span></div></section><section className="evi-measurement-note"><FlaskConical size={22} /><div><h3>数字的边界，也属于结果。</h3><p>语料由项目内部编写并固定，非外部独立测试集；本份合成回归报告未覆盖真实银行、实体认证设备、外部欺诈数据或用户研究。其他验证单独记录。图谱采用模板事实与可选模型编排；尚未评测自由文本 GraphRAG 生成质量。小样本结果不能外推为通用准确率。</p><p>复现：<code>python -m backend.eval.banking_release_eval --live-model</code></p></div></section></> : <div className="evi-loading">{error ? '评测报告暂不可用，请按提示生成报告后重新进入。' : <><LoaderCircle className="spin" />正在读取评测档案</>}</div>}
+  </div>
+}

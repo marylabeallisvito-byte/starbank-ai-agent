@@ -1,0 +1,32 @@
+# =====================================================================
+# Python 依赖清单
+# 安装方式：pip install -r requirements.txt
+# =====================================================================
+
+# ---- Phase 1 · 图数据底座 ----
+neo4j>=5.20.0                 # Neo4j 官方 Python 驱动
+faker>=25.0.0                 # 沙盒数据生成
+python-dotenv>=1.0.0          # 环境变量加载
+pydantic>=2.7.0               # 数据校验 / 模型定义
+
+# ---- Phase 2 · GraphRAG 抽取器（LangChain）----
+langchain>=1.0.0              # LangChain 主包
+langchain-community>=0.4.0    # 社区集成
+langchain-openai>=1.0.0       # OpenAI 兼容 LLM 客户端（可切换 DeepSeek 等）
+
+# ---- Phase 3 · 多 Agent 工作流（LangGraph）----
+langgraph>=1.0.0              # 状态图编排，多 Agent 协作
+
+# ---- Phase 4 · API 服务化 + SSE 流式引擎 ----
+fastapi>=0.110.0              # Web 框架（REST 接口）
+uvicorn[standard]>=0.29.0     # ASGI 服务器（含 reload / websocket 支持）
+sse-starlette>=2.0.0          # Server-Sent Events 流式响应
+httpx==0.28.1
+webauthn==3.0.1              # Device user-verification and transaction-bound signatures
+
+cryptography>=43.0.0        # Fernet encryption for server-side Plaid Sandbox tokens
+
+openpyxl==3.1.5              # Local XLSX statement parsing, no formula execution
+xlrd==2.0.2                  # Legacy XLS cached-value parsing
+
+scikit-learn==1.7.2          # Reproducible synthetic graph-feature benchmark

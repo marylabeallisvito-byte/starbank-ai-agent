@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-30",
+  "scope": "Internal isolated cross-business matrix and synthetic external faults",
+  "real_users": 0,
+  "hardware_authentication_exercised": false,
+  "specialized_test_methods": 12,
+  "regression": {
+    "passed": 270,
+    "total": 270
+  },
+  "fixed_intent": {
+    "passed": 24,
+    "total": 24
+  },
+  "frontend_lint_typescript_build": "passed",
+  "source_and_build_provenance": "matched",
+  "packaged_smoke": {
+    "passed": 20,
+    "checks": [
+      "fresh_local_configuration",
+      "manifest_and_frontend_provenance",
+      "imports_from_extracted_release",
+      "built_site_and_uncached_entry",
+      "entry_assets_available",
+      "customer_session_required",
+      "fresh_virtual_account",
+      "strong_authentication_default",
+      "monthly_goal_preparation",
+      "contextual_revision",
+      "no_unconfirmed_funds_effects",
+      "packaged_prohibition_preserved",
+      "packaged_prerequisite_blocks",
+      "packaged_blocked_activation_rejected",
+      "packaged_card_freeze",
+      "packaged_recovery_guidance",
+      "packaged_unlock_strong_auth",
+      "packaged_unverified_unlock_blocked",
+      "local_workforce_login",
+      "workforce_logout"
+    ],
+    "archive": "starbank-20261030T012318884921Z.zip",
+    "mode": "isolated_packaged_smoke",
+    "real_users": 0,
+    "limitations": [
+      "Uses the existing host virtualenv; cold dependency installation and another OS were not tested.",
+      "No hardware authentication, real-bank funds, or subjective user scores were exercised."
+    ]
+  },
+  "release": {
+    "archive": "C:\\Users\\S\\Desktop\\finrisk-graphrag\\output\\releases\\starbank-20261030T012318884921Z.zip",
+    "sha256": "78eaa01fd5531c820e564de529deb1d8a3a3b5582109b7828873a6b684c74dd2",
+    "files": 196,
+    "contains_user_data": false
+  },
+  "browser_checks": {
+    "freeze_completed": true,
+    "frozen_card_survives_refresh": true,
+    "unfreeze_preview_red": true,
+    "unenrolled_device_requires_binding": true,
+    "updated_policy_copy_visible": true
+  },
+  "limitations": [
+    "Four kinds represent selected operation paths, not every operation or fault combination.",
+    "No physical power loss, institutional identity or independent human users.",
+    "Existing host virtualenv reused; cold dependency installation not verified."
+  ]
+}

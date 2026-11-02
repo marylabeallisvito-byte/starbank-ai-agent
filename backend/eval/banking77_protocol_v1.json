@@ -1,0 +1,13 @@
+{
+  "version": "banking77-routing-v1",
+  "source_url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/master/banking_data/test.csv",
+  "source_sha256": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+  "license": "CC BY 4.0",
+  "source_authors": "PolyAI; Casanueva, Temcinas, Gerz, Henderson and Vulic (2020)",
+  "seed": "20261028-routing-v1",
+  "per_category": 10,
+  "mapping": {"lost_or_stolen_card": "card", "compromised_card": "card", "transaction_charged_twice": "bills", "exchange_rate": "fx_budget"},
+  "selection": "For each predeclared category, take the ten original test texts with smallest SHA256(seed + text). No translation, rewriting, training split, tuning or post-result exclusion.",
+  "scope": "External-source English bank-support queries mapped to broad application routes; not the original 77-way benchmark, Chinese workflow assessment, independent assessor certification or real fraud evaluation.",
+  "frozen_before_test_execution": true
+}

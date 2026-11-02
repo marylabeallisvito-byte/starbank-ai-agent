@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="680" height="305" preserveAspectRatio="xMinYMin meet" viewBox="0 0 680 305" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="680" height="305"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-305)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="0" y="285" style="font-family: CN; font-size: 18px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,570) scale(1,-1)">模型建议与执行权限分离</text>
+			<rect x="0" y="158" width="210" height="94" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="13" y="227" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,454) scale(1,-1)">绿色</text>
+			<text x="13" y="207" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,414) scale(1,-1)">余额、交易与账单分析</text>
+			<text x="13" y="191" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,382) scale(1,-1)">确认意图后自动查询</text>
+			<rect x="235" y="158" width="210" height="94" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(97%,94%,86%); fill-rule: evenodd;"/>
+			<text x="248" y="227" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,454) scale(1,-1)">黄色</text>
+			<text x="248" y="207" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,414) scale(1,-1)">低风险小额转账、冻结</text>
+			<text x="248" y="191" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,382) scale(1,-1)">订阅查询与取消需明确确认</text>
+			<rect x="470" y="158" width="210" height="94" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(96%,90%,88%); fill-rule: evenodd;"/>
+			<text x="483" y="227" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,454) scale(1,-1)">红色</text>
+			<text x="483" y="207" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,414) scale(1,-1)">超额或升级转账、解冻、挂失</text>
+			<text x="483" y="191" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,382) scale(1,-1)">理财申赎须设备强验证</text>
+			<rect x="0" y="33" width="305" height="80" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="13" y="88" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,176) scale(1,-1)">业务端二次检查</text>
+			<text x="13" y="68" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,136) scale(1,-1)">会话归属、预览有效期、摘要</text>
+			<text x="13" y="52" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,104) scale(1,-1)">余额、图谱来源、适当性与设备授权</text>
+			<rect x="355" y="33" width="325" height="80" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="368" y="88" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,176) scale(1,-1)">提交与恢复</text>
+			<text x="368" y="68" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,136) scale(1,-1)">BEGIN IMMEDIATE + 业务幂等</text>
+			<text x="368" y="52" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,104) scale(1,-1)">成功回执 / 失败回滚 / 只读查验</text>
+			<path d="M 105,158 L 150,113 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="150 113, 144 116, 144 110" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 340,158 L 305,90 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="305 90, 311 93, 311 87" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 575,158 L 305,90 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="305 90, 311 93, 311 87" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 305,73 L 355,73 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="355 73, 349 76, 349 70" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<text x="0" y="5" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,10) scale(1,-1)">转账日累计 ≤1000 元通常为黄色；超过阈值或命中升级条件为红色。</text>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "version": "monthly-challenge-protocol-v1",
+  "frozen_at": "2026-10-29T12:59:08.631182+00:00",
+  "corpus_sha256": "490a238b15c7b0c116c6e610d74f47acef27d2041e9e22bd627dca12b3b0b4a3",
+  "authorship": "project_developer",
+  "independent": false,
+  "first_run_immutable": true
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="680" height="400" preserveAspectRatio="xMinYMin meet" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="680" height="400"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-400)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="0" y="382" style="font-family: CN; font-size: 18px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,764) scale(1,-1)">系统架构与执行边界</text>
+			<rect x="0" y="284" width="200" height="70" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="13" y="329" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,658) scale(1,-1)">用户工作台</text>
+			<text x="13" y="309" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,618) scale(1,-1)">React / TypeScript</text>
+			<text x="13" y="293" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,586) scale(1,-1)">对话、草案、授权、回执</text>
+			<rect x="240" y="284" width="200" height="70" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="253" y="329" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,658) scale(1,-1)">目标与任务服务</text>
+			<text x="253" y="309" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,618) scale(1,-1)">受限条件编译、版本摘要</text>
+			<text x="253" y="293" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,586) scale(1,-1)">服务端持有 DAG 与状态</text>
+			<rect x="480" y="284" width="200" height="70" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="493" y="329" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,658) scale(1,-1)">业务执行层</text>
+			<text x="493" y="309" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,618) scale(1,-1)">资金、持仓、卡片、订阅</text>
+			<text x="493" y="293" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,586) scale(1,-1)">权限与条件在执行前复验</text>
+			<path d="M 200,319 L 240,319 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="240 319, 234 322, 234 316" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 440,319 L 480,319 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="480 319, 474 322, 474 316" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<rect x="0" y="164" width="200" height="74" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(95%,94%,91%); fill-rule: evenodd;"/>
+			<text x="13" y="213" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,426) scale(1,-1)">可选语义模型</text>
+			<text x="13" y="193" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,386) scale(1,-1)">结构化分类与候选槽位</text>
+			<text x="13" y="177" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,354) scale(1,-1)">不持有业务执行权限</text>
+			<rect x="240" y="164" width="200" height="74" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="253" y="213" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,426) scale(1,-1)">授权与独立复核</text>
+			<text x="253" y="193" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,386) scale(1,-1)">用户确认 / WebAuthn</text>
+			<text x="253" y="177" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,354) scale(1,-1)">工作人员独立身份</text>
+			<rect x="480" y="164" width="200" height="74" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="493" y="213" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,426) scale(1,-1)">本地仿真账本</text>
+			<text x="493" y="193" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,386) scale(1,-1)">SQLite 事务与幂等键</text>
+			<text x="493" y="177" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,354) scale(1,-1)">敏感文本字段认证加密</text>
+			<path d="M 100,284 L 100,238 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2; stroke-dasharray: 4, 3;"/>
+			<polygon points="100 238, 97 244, 103 244" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 200,201 L 240,284 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2; stroke-dasharray: 4, 3;"/>
+			<polygon points="240 284, 234 287, 234 281" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 340,284 L 340,238 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="340 238, 337 244, 343 244" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 580,284 L 580,238 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="580 238, 577 244, 583 244" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<rect x="0" y="35" width="200" height="76" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="13" y="86" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,172) scale(1,-1)">可选外部只读来源</text>
+			<text x="13" y="66" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,132) scale(1,-1)">Plaid Sandbox / 公开通知</text>
+			<text x="13" y="50" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,100) scale(1,-1)">参考汇率，不进入可执行余额</text>
+			<rect x="240" y="35" width="200" height="76" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="253" y="86" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,172) scale(1,-1)">证据与审计服务</text>
+			<text x="253" y="66" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,132) scale(1,-1)">来源快照、输入摘要</text>
+			<text x="253" y="50" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,100) scale(1,-1)">事件链、结果只读恢复</text>
+			<rect x="480" y="35" width="200" height="76" rx="9" ry="9" style="stroke: rgb(78%,83%,78%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,89%); fill-rule: evenodd;"/>
+			<text x="493" y="86" style="font-family: CN; font-size: 12px;fill: rgb(14%,30%,23%); stroke:none;" transform="translate(0,172) scale(1,-1)">评审运行方式</text>
+			<text x="493" y="66" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,132) scale(1,-1)">localhost 单一来源</text>
+			<text x="493" y="50" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,100) scale(1,-1)">前端构建与版本清单校验</text>
+			<path d="M 200,73 L 240,73 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="240 73, 234 76, 234 70" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 340,164 L 340,111 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="340 111, 337 117, 343 117" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<path d="M 580,164 L 440,73 Z" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="440 73, 446 76, 446 70" style="stroke: rgb(14%,30%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,30%,23%); fill-rule: evenodd;"/>
+			<text x="0" y="7" style="font-family: CN; font-size: 9px;fill: rgb(36%,41%,38%); stroke:none;" transform="translate(0,14) scale(1,-1)">实线为已实现业务关系；虚线为可选模型辅助。业务资金始终处于仿真账本。</text>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,1447 @@
+{
+  "generated_at": "2026-10-27T11:19:56.899375+00:00",
+  "protocol": {
+    "version": "amlsim-recall-v2",
+    "cut": 90,
+    "step_hours": 24,
+    "max_development_fpr": 0.1,
+    "candidates": [
+      {
+        "min_amount": 150,
+        "window_hours": 72,
+        "min_sources": 3,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 150,
+        "window_hours": 72,
+        "min_sources": 4,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 150,
+        "window_hours": 72,
+        "min_sources": 5,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 150,
+        "window_hours": 168,
+        "min_sources": 3,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 150,
+        "window_hours": 168,
+        "min_sources": 4,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 150,
+        "window_hours": 168,
+        "min_sources": 5,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 72,
+        "min_sources": 3,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 72,
+        "min_sources": 4,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 72,
+        "min_sources": 5,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 168,
+        "min_sources": 3,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 168,
+        "min_sources": 4,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 168,
+        "min_sources": 5,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 300,
+        "window_hours": 72,
+        "min_sources": 3,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 300,
+        "window_hours": 72,
+        "min_sources": 4,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 300,
+        "window_hours": 72,
+        "min_sources": 5,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 300,
+        "window_hours": 168,
+        "min_sources": 3,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 300,
+        "window_hours": 168,
+        "min_sources": 4,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 300,
+        "window_hours": 168,
+        "min_sources": 5,
+        "tolerance": 0.2
+      },
+      {
+        "min_amount": 50,
+        "window_hours": 336,
+        "min_sources": 99,
+        "tolerance": 0.3,
+        "max_cycle_length": 10
+      },
+      {
+        "min_amount": 50,
+        "window_hours": 336,
+        "min_sources": 99,
+        "tolerance": 1.0,
+        "max_cycle_length": 10
+      },
+      {
+        "min_amount": 150,
+        "window_hours": 336,
+        "min_sources": 99,
+        "tolerance": 0.3,
+        "max_cycle_length": 10
+      },
+      {
+        "min_amount": 150,
+        "window_hours": 336,
+        "min_sources": 99,
+        "tolerance": 1.0,
+        "max_cycle_length": 10
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 336,
+        "min_sources": 99,
+        "tolerance": 0.3,
+        "max_cycle_length": 10
+      },
+      {
+        "min_amount": 200,
+        "window_hours": 336,
+        "min_sources": 99,
+        "tolerance": 1.0,
+        "max_cycle_length": 10
+      }
+    ],
+    "selection": "Max development F2 subject to FPR <= 0.10; fallback maximum F1 if none feasible. First candidate wins ties.",
+    "supervised": {
+      "train_end_step": 60,
+      "validation_steps": [
+        61,
+        90
+      ],
+      "threshold_candidates": [
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "trees": 120,
+      "max_depth": 8,
+      "min_samples_leaf": 10,
+      "seed": 20261027
+    },
+    "scope": "New scenario holdouts from the same external synthetic generator; shared background/IDs are possible. Not real fraud or independent seed validation."
+  },
+  "selection": {
+    "created_at": "2026-10-27T11:17:27.519026+00:00",
+    "protocol": {
+      "version": "amlsim-recall-v2",
+      "cut": 90,
+      "step_hours": 24,
+      "max_development_fpr": 0.1,
+      "candidates": [
+        {
+          "min_amount": 150,
+          "window_hours": 72,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 150,
+          "window_hours": 72,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 150,
+          "window_hours": 72,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 150,
+          "window_hours": 168,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 150,
+          "window_hours": 168,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 150,
+          "window_hours": 168,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 200,
+          "window_hours": 72,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 200,
+          "window_hours": 72,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 200,
+          "window_hours": 72,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 200,
+          "window_hours": 168,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 200,
+          "window_hours": 168,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 200,
+          "window_hours": 168,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 300,
+          "window_hours": 72,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 300,
+          "window_hours": 72,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 300,
+          "window_hours": 72,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 300,
+          "window_hours": 168,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 300,
+          "window_hours": 168,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 300,
+          "window_hours": 168,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        {
+          "min_amount": 50,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 0.3,
+          "max_cycle_length": 10
+        },
+        {
+          "min_amount": 50,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 1.0,
+          "max_cycle_length": 10
+        },
+        {
+          "min_amount": 150,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 0.3,
+          "max_cycle_length": 10
+        },
+        {
+          "min_amount": 150,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 1.0,
+          "max_cycle_length": 10
+        },
+        {
+          "min_amount": 200,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 0.3,
+          "max_cycle_length": 10
+        },
+        {
+          "min_amount": 200,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 1.0,
+          "max_cycle_length": 10
+        }
+      ],
+      "selection": "Max development F2 subject to FPR <= 0.10; fallback maximum F1 if none feasible. First candidate wins ties.",
+      "supervised": {
+        "train_end_step": 60,
+        "validation_steps": [
+          61,
+          90
+        ],
+        "threshold_candidates": [
+          0.05,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "trees": 120,
+        "max_depth": 8,
+        "min_samples_leaf": 10,
+        "seed": 20261027
+      },
+      "scope": "New scenario holdouts from the same external synthetic generator; shared background/IDs are possible. Not real fraud or independent seed validation."
+    },
+    "code_sha256": "4ab85ff37a3453a2570e63d3fc326b06161fd9c10efe97a082dad5fd6862b02a",
+    "development_sha256": "f187bc5784223cdee137ac603164f7183fd58f114090f39e2a12543b6bf48319",
+    "trials": [
+      {
+        "config": {
+          "min_amount": 150,
+          "window_hours": 72,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 215,
+          "fp": 6635,
+          "tn": 11491,
+          "fn": 154,
+          "precision": 0.031387,
+          "recall": 0.582656,
+          "f1": 0.059565,
+          "false_positive_rate": 0.366049,
+          "f2": 0.129114
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 150,
+          "window_hours": 72,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 117,
+          "fp": 3719,
+          "tn": 14407,
+          "fn": 252,
+          "precision": 0.030501,
+          "recall": 0.317073,
+          "f1": 0.055648,
+          "false_positive_rate": 0.205175,
+          "f2": 0.110128
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 150,
+          "window_hours": 72,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 77,
+          "fp": 2293,
+          "tn": 15833,
+          "fn": 292,
+          "precision": 0.032489,
+          "recall": 0.208672,
+          "f1": 0.056225,
+          "false_positive_rate": 0.126503,
+          "f2": 0.100104
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 150,
+          "window_hours": 168,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 261,
+          "fp": 10166,
+          "tn": 7960,
+          "fn": 108,
+          "precision": 0.025031,
+          "recall": 0.707317,
+          "f1": 0.048351,
+          "false_positive_rate": 0.560852,
+          "f2": 0.109636
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 150,
+          "window_hours": 168,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 206,
+          "fp": 6795,
+          "tn": 11331,
+          "fn": 163,
+          "precision": 0.029424,
+          "recall": 0.558266,
+          "f1": 0.055902,
+          "false_positive_rate": 0.374876,
+          "f2": 0.121505
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 150,
+          "window_hours": 168,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 164,
+          "fp": 4877,
+          "tn": 13249,
+          "fn": 205,
+          "precision": 0.032533,
+          "recall": 0.444444,
+          "f1": 0.060628,
+          "false_positive_rate": 0.269061,
+          "f2": 0.125825
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 200,
+          "window_hours": 72,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 156,
+          "fp": 4160,
+          "tn": 13966,
+          "fn": 213,
+          "precision": 0.036145,
+          "recall": 0.422764,
+          "f1": 0.066596,
+          "false_positive_rate": 0.229505,
+          "f2": 0.134669
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 200,
+          "window_hours": 72,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 84,
+          "fp": 2189,
+          "tn": 15937,
+          "fn": 285,
+          "precision": 0.036956,
+          "recall": 0.227642,
+          "f1": 0.063588,
+          "false_positive_rate": 0.120766,
+          "f2": 0.11203
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 200,
+          "window_hours": 72,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 50,
+          "fp": 1241,
+          "tn": 16885,
+          "fn": 319,
+          "precision": 0.03873,
+          "recall": 0.135501,
+          "f1": 0.060241,
+          "false_positive_rate": 0.068465,
+          "f2": 0.090351
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 200,
+          "window_hours": 168,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 210,
+          "fp": 6912,
+          "tn": 11214,
+          "fn": 159,
+          "precision": 0.029486,
+          "recall": 0.569106,
+          "f1": 0.056067,
+          "false_positive_rate": 0.381331,
+          "f2": 0.122121
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 200,
+          "window_hours": 168,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 157,
+          "fp": 4293,
+          "tn": 13833,
+          "fn": 212,
+          "precision": 0.035281,
+          "recall": 0.425474,
+          "f1": 0.065159,
+          "false_positive_rate": 0.236842,
+          "f2": 0.132467
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 200,
+          "window_hours": 168,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 113,
+          "fp": 2938,
+          "tn": 15188,
+          "fn": 256,
+          "precision": 0.037037,
+          "recall": 0.306233,
+          "f1": 0.066082,
+          "false_positive_rate": 0.162088,
+          "f2": 0.124807
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 300,
+          "window_hours": 72,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 89,
+          "fp": 1986,
+          "tn": 16140,
+          "fn": 280,
+          "precision": 0.042892,
+          "recall": 0.241192,
+          "f1": 0.072831,
+          "false_positive_rate": 0.109566,
+          "f2": 0.125317
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 300,
+          "window_hours": 72,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 43,
+          "fp": 836,
+          "tn": 17290,
+          "fn": 326,
+          "precision": 0.048919,
+          "recall": 0.116531,
+          "f1": 0.06891,
+          "false_positive_rate": 0.046122,
+          "f2": 0.091295
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 300,
+          "window_hours": 72,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 24,
+          "fp": 415,
+          "tn": 17711,
+          "fn": 345,
+          "precision": 0.05467,
+          "recall": 0.065041,
+          "f1": 0.059406,
+          "false_positive_rate": 0.022895,
+          "f2": 0.062663
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 300,
+          "window_hours": 168,
+          "min_sources": 3,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 131,
+          "fp": 3717,
+          "tn": 14409,
+          "fn": 238,
+          "precision": 0.034044,
+          "recall": 0.355014,
+          "f1": 0.062129,
+          "false_positive_rate": 0.205065,
+          "f2": 0.123028
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 300,
+          "window_hours": 168,
+          "min_sources": 4,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 90,
+          "fp": 2007,
+          "tn": 16119,
+          "fn": 279,
+          "precision": 0.042918,
+          "recall": 0.243902,
+          "f1": 0.072993,
+          "false_positive_rate": 0.110725,
+          "f2": 0.125945
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 300,
+          "window_hours": 168,
+          "min_sources": 5,
+          "tolerance": 0.2
+        },
+        "metrics": {
+          "tp": 57,
+          "fp": 1230,
+          "tn": 16896,
+          "fn": 312,
+          "precision": 0.044289,
+          "recall": 0.154472,
+          "f1": 0.068841,
+          "false_positive_rate": 0.067858,
+          "f2": 0.103149
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 50,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 0.3,
+          "max_cycle_length": 10
+        },
+        "metrics": {
+          "tp": 0,
+          "fp": 2,
+          "tn": 18124,
+          "fn": 369,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.00011,
+          "f2": 0
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 50,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 1.0,
+          "max_cycle_length": 10
+        },
+        "metrics": {
+          "tp": 3,
+          "fp": 12,
+          "tn": 18114,
+          "fn": 366,
+          "precision": 0.2,
+          "recall": 0.00813,
+          "f1": 0.015625,
+          "false_positive_rate": 0.000662,
+          "f2": 0.01006
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 150,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 0.3,
+          "max_cycle_length": 10
+        },
+        "metrics": {
+          "tp": 0,
+          "fp": 2,
+          "tn": 18124,
+          "fn": 369,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.00011,
+          "f2": 0
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 150,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 1.0,
+          "max_cycle_length": 10
+        },
+        "metrics": {
+          "tp": 3,
+          "fp": 12,
+          "tn": 18114,
+          "fn": 366,
+          "precision": 0.2,
+          "recall": 0.00813,
+          "f1": 0.015625,
+          "false_positive_rate": 0.000662,
+          "f2": 0.01006
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 200,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 0.3,
+          "max_cycle_length": 10
+        },
+        "metrics": {
+          "tp": 0,
+          "fp": 2,
+          "tn": 18124,
+          "fn": 369,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.00011,
+          "f2": 0
+        },
+        "complete": true
+      },
+      {
+        "config": {
+          "min_amount": 200,
+          "window_hours": 336,
+          "min_sources": 99,
+          "tolerance": 1.0,
+          "max_cycle_length": 10
+        },
+        "metrics": {
+          "tp": 3,
+          "fp": 10,
+          "tn": 18116,
+          "fn": 366,
+          "precision": 0.230769,
+          "recall": 0.00813,
+          "f1": 0.015707,
+          "false_positive_rate": 0.000552,
+          "f2": 0.010074
+        },
+        "complete": true
+      }
+    ],
+    "selected": {
+      "config": {
+        "min_amount": 300,
+        "window_hours": 168,
+        "min_sources": 5,
+        "tolerance": 0.2
+      },
+      "metrics": {
+        "tp": 57,
+        "fp": 1230,
+        "tn": 16896,
+        "fn": 312,
+        "precision": 0.044289,
+        "recall": 0.154472,
+        "f1": 0.068841,
+        "false_positive_rate": 0.067858,
+        "f2": 0.103149
+      },
+      "complete": true
+    },
+    "scenario_files_sha256": {
+      "20K_cycle200.tgz": "da85ffd26f2c0a082f69b038a9bb5ebd2b6e9c0df15707381aeddcfcb572ae20",
+      "20K_fanin200.tgz": "e2479ab7a1ecfcd369a7738c855364825561bf9d888d2ad53174e0ed10fd1f1b"
+    },
+    "amount_ablation": {
+      "features": [
+        "in_sum",
+        "out_sum",
+        "in_max",
+        "out_max",
+        "in_mean",
+        "out_mean",
+        "in_std",
+        "out_std"
+      ],
+      "selected": {
+        "threshold": 0.4,
+        "metrics": {
+          "tp": 199,
+          "fp": 0,
+          "tn": 16914,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.995,
+          "f1": 0.997494,
+          "false_positive_rate": 0.0,
+          "f2": 0.995995995995996
+        }
+      },
+      "trials": [
+        {
+          "threshold": 0.05,
+          "metrics": {
+            "tp": 200,
+            "fp": 1583,
+            "tn": 15331,
+            "fn": 0,
+            "precision": 0.11217,
+            "recall": 1.0,
+            "f1": 0.201715,
+            "false_positive_rate": 0.093591,
+            "f2": 0.38714672861014326
+          }
+        },
+        {
+          "threshold": 0.1,
+          "metrics": {
+            "tp": 200,
+            "fp": 133,
+            "tn": 16781,
+            "fn": 0,
+            "precision": 0.600601,
+            "recall": 1.0,
+            "f1": 0.750469,
+            "false_positive_rate": 0.007863,
+            "f2": 0.8826125330979699
+          }
+        },
+        {
+          "threshold": 0.2,
+          "metrics": {
+            "tp": 200,
+            "fp": 36,
+            "tn": 16878,
+            "fn": 0,
+            "precision": 0.847458,
+            "recall": 1.0,
+            "f1": 0.917431,
+            "false_positive_rate": 0.002128,
+            "f2": 0.9652509652509652
+          }
+        },
+        {
+          "threshold": 0.3,
+          "metrics": {
+            "tp": 200,
+            "fp": 21,
+            "tn": 16893,
+            "fn": 0,
+            "precision": 0.904977,
+            "recall": 1.0,
+            "f1": 0.950119,
+            "false_positive_rate": 0.001242,
+            "f2": 0.9794319294809011
+          }
+        },
+        {
+          "threshold": 0.4,
+          "metrics": {
+            "tp": 199,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.995,
+            "f1": 0.997494,
+            "false_positive_rate": 0.0,
+            "f2": 0.995995995995996
+          }
+        },
+        {
+          "threshold": 0.5,
+          "metrics": {
+            "tp": 172,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 28,
+            "precision": 1.0,
+            "recall": 0.86,
+            "f1": 0.924731,
+            "false_positive_rate": 0.0,
+            "f2": 0.8847736625514403
+          }
+        },
+        {
+          "threshold": 0.6,
+          "metrics": {
+            "tp": 170,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 30,
+            "precision": 1.0,
+            "recall": 0.85,
+            "f1": 0.918919,
+            "false_positive_rate": 0.0,
+            "f2": 0.8762886597938144
+          }
+        },
+        {
+          "threshold": 0.7,
+          "metrics": {
+            "tp": 169,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 31,
+            "precision": 1.0,
+            "recall": 0.845,
+            "f1": 0.915989,
+            "false_positive_rate": 0.0,
+            "f2": 0.8720330237358102
+          }
+        },
+        {
+          "threshold": 0.8,
+          "metrics": {
+            "tp": 164,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 36,
+            "precision": 1.0,
+            "recall": 0.82,
+            "f1": 0.901099,
+            "false_positive_rate": 0.0,
+            "f2": 0.8506224066390041
+          }
+        },
+        {
+          "threshold": 0.9,
+          "metrics": {
+            "tp": 135,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 65,
+            "precision": 1.0,
+            "recall": 0.675,
+            "f1": 0.80597,
+            "false_positive_rate": 0.0,
+            "f2": 0.7219251336898396
+          }
+        }
+      ]
+    },
+    "supervised_model": {
+      "kind": "RandomForest over graph topology/flow features (not GNN)",
+      "sklearn": "1.7.2",
+      "model_sha256": "a0838cf1fbc1daf535aa3677bc0200ef8f1615498187f21d0fbe2a96e03a342b",
+      "train_accounts": 17374,
+      "train_positives": 169,
+      "validation_accounts": 17114,
+      "validation_positives": 200,
+      "selected": {
+        "threshold": 0.4,
+        "metrics": {
+          "tp": 200,
+          "fp": 0,
+          "tn": 16914,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "false_positive_rate": 0.0,
+          "f2": 1.0
+        }
+      },
+      "trials": [
+        {
+          "threshold": 0.05,
+          "metrics": {
+            "tp": 200,
+            "fp": 607,
+            "tn": 16307,
+            "fn": 0,
+            "precision": 0.247831,
+            "recall": 1.0,
+            "f1": 0.397219,
+            "false_positive_rate": 0.035887,
+            "f2": 0.6222775357809583
+          }
+        },
+        {
+          "threshold": 0.1,
+          "metrics": {
+            "tp": 200,
+            "fp": 136,
+            "tn": 16778,
+            "fn": 0,
+            "precision": 0.595238,
+            "recall": 1.0,
+            "f1": 0.746269,
+            "false_positive_rate": 0.008041,
+            "f2": 0.8802816901408451
+          }
+        },
+        {
+          "threshold": 0.2,
+          "metrics": {
+            "tp": 200,
+            "fp": 30,
+            "tn": 16884,
+            "fn": 0,
+            "precision": 0.869565,
+            "recall": 1.0,
+            "f1": 0.930233,
+            "false_positive_rate": 0.001774,
+            "f2": 0.970873786407767
+          }
+        },
+        {
+          "threshold": 0.3,
+          "metrics": {
+            "tp": 200,
+            "fp": 1,
+            "tn": 16913,
+            "fn": 0,
+            "precision": 0.995025,
+            "recall": 1.0,
+            "f1": 0.997506,
+            "false_positive_rate": 5.9e-05,
+            "f2": 0.999000999000999
+          }
+        },
+        {
+          "threshold": 0.4,
+          "metrics": {
+            "tp": 200,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "f2": 1.0
+          }
+        },
+        {
+          "threshold": 0.5,
+          "metrics": {
+            "tp": 200,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "f2": 1.0
+          }
+        },
+        {
+          "threshold": 0.6,
+          "metrics": {
+            "tp": 200,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "f2": 1.0
+          }
+        },
+        {
+          "threshold": 0.7,
+          "metrics": {
+            "tp": 179,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 21,
+            "precision": 1.0,
+            "recall": 0.895,
+            "f1": 0.944591,
+            "false_positive_rate": 0.0,
+            "f2": 0.9141981613891726
+          }
+        },
+        {
+          "threshold": 0.8,
+          "metrics": {
+            "tp": 170,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 30,
+            "precision": 1.0,
+            "recall": 0.85,
+            "f1": 0.918919,
+            "false_positive_rate": 0.0,
+            "f2": 0.8762886597938144
+          }
+        },
+        {
+          "threshold": 0.9,
+          "metrics": {
+            "tp": 167,
+            "fp": 0,
+            "tn": 16914,
+            "fn": 33,
+            "precision": 1.0,
+            "recall": 0.835,
+            "f1": 0.910082,
+            "false_positive_rate": 0.0,
+            "f2": 0.8634953464322648
+          }
+        }
+      ],
+      "feature_importances": [
+        {
+          "name": "out_std",
+          "importance": 0.34271
+        },
+        {
+          "name": "out_repeat_ratio",
+          "importance": 0.268668
+        },
+        {
+          "name": "out_count",
+          "importance": 0.152506
+        },
+        {
+          "name": "out_mean",
+          "importance": 0.082006
+        },
+        {
+          "name": "unique_targets",
+          "importance": 0.025924
+        },
+        {
+          "name": "out_sum",
+          "importance": 0.023531
+        },
+        {
+          "name": "out_max",
+          "importance": 0.023482
+        },
+        {
+          "name": "neighbor_degree_max",
+          "importance": 0.015723
+        },
+        {
+          "name": "in_count",
+          "importance": 0.012004
+        },
+        {
+          "name": "in_sum",
+          "importance": 0.0109
+        },
+        {
+          "name": "in_mean",
+          "importance": 0.00874
+        },
+        {
+          "name": "neighbor_degree_mean",
+          "importance": 0.008525
+        },
+        {
+          "name": "in_std",
+          "importance": 0.007631
+        },
+        {
+          "name": "in_max",
+          "importance": 0.007055
+        },
+        {
+          "name": "flow_balance",
+          "importance": 0.005787
+        },
+        {
+          "name": "unique_sources",
+          "importance": 0.004625
+        },
+        {
+          "name": "in_repeat_ratio",
+          "importance": 0.000185
+        }
+      ]
+    }
+  },
+  "scenarios": [
+    {
+      "name": "20K_fanin200cycle200.tgz",
+      "scope": "historical_exposed_diagnostic",
+      "archive_sha256": "f187bc5784223cdee137ac603164f7183fd58f114090f39e2a12543b6bf48319",
+      "accounts": 16889,
+      "positives": 529,
+      "transactions": 41618,
+      "v1": {
+        "tp": 77,
+        "fp": 1352,
+        "tn": 15008,
+        "fn": 452,
+        "precision": 0.053884,
+        "recall": 0.145558,
+        "f1": 0.078652,
+        "false_positive_rate": 0.082641
+      },
+      "v2": {
+        "tp": 47,
+        "fp": 657,
+        "tn": 15703,
+        "fn": 482,
+        "precision": 0.066761,
+        "recall": 0.088847,
+        "f1": 0.076237,
+        "false_positive_rate": 0.040159
+      },
+      "graph_feature_model": {
+        "tp": 507,
+        "fp": 0,
+        "tn": 16360,
+        "fn": 22,
+        "precision": 1.0,
+        "recall": 0.958412,
+        "f1": 0.978764,
+        "false_positive_rate": 0.0
+      },
+      "amount_feature_model": {
+        "tp": 526,
+        "fp": 0,
+        "tn": 16360,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.994329,
+        "f1": 0.997156,
+        "false_positive_rate": 0.0
+      },
+      "complete": true,
+      "finding_count": 424
+    },
+    {
+      "name": "20K_cycle200.tgz",
+      "scope": "new_scenario_holdout",
+      "archive_sha256": "da85ffd26f2c0a082f69b038a9bb5ebd2b6e9c0df15707381aeddcfcb572ae20",
+      "accounts": 17356,
+      "positives": 276,
+      "transactions": 39859,
+      "v1": {
+        "tp": 33,
+        "fp": 1363,
+        "tn": 15717,
+        "fn": 243,
+        "precision": 0.023639,
+        "recall": 0.119565,
+        "f1": 0.039474,
+        "false_positive_rate": 0.079801
+      },
+      "v2": {
+        "tp": 22,
+        "fp": 613,
+        "tn": 16467,
+        "fn": 254,
+        "precision": 0.034646,
+        "recall": 0.07971,
+        "f1": 0.048299,
+        "false_positive_rate": 0.03589
+      },
+      "graph_feature_model": {
+        "tp": 262,
+        "fp": 0,
+        "tn": 17080,
+        "fn": 14,
+        "precision": 1.0,
+        "recall": 0.949275,
+        "f1": 0.973978,
+        "false_positive_rate": 0.0
+      },
+      "amount_feature_model": {
+        "tp": 274,
+        "fp": 0,
+        "tn": 17080,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.992754,
+        "f1": 0.996364,
+        "false_positive_rate": 0.0
+      },
+      "complete": true,
+      "finding_count": 359
+    },
+    {
+      "name": "20K_fanin200.tgz",
+      "scope": "new_scenario_holdout",
+      "archive_sha256": "e2479ab7a1ecfcd369a7738c855364825561bf9d888d2ad53174e0ed10fd1f1b",
+      "accounts": 17344,
+      "positives": 273,
+      "transactions": 39825,
+      "v1": {
+        "tp": 28,
+        "fp": 1464,
+        "tn": 15607,
+        "fn": 245,
+        "precision": 0.018767,
+        "recall": 0.102564,
+        "f1": 0.031728,
+        "false_positive_rate": 0.085759
+      },
+      "v2": {
+        "tp": 12,
+        "fp": 648,
+        "tn": 16423,
+        "fn": 261,
+        "precision": 0.018182,
+        "recall": 0.043956,
+        "f1": 0.025723,
+        "false_positive_rate": 0.037959
+      },
+      "graph_feature_model": {
+        "tp": 258,
+        "fp": 0,
+        "tn": 17071,
+        "fn": 15,
+        "precision": 1.0,
+        "recall": 0.945055,
+        "f1": 0.971751,
+        "false_positive_rate": 0.0
+      },
+      "amount_feature_model": {
+        "tp": 273,
+        "fp": 0,
+        "tn": 17071,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "complete": true,
+      "finding_count": 381
+    }
+  ],
+  "limitations": [
+    "V1 historical test was already exposed; new algorithm comparisons there are retrospective.",
+    "Other scenarios may share generator background, account IDs and seeds; their independence is not established.",
+    "Generator-specific amount artifacts may explain strong supervised performance; amount-only supervised ablation is included.",
+    "All results concern synthetic data, not bank fraud rates. No labels enter graph features."
+  ]
+}

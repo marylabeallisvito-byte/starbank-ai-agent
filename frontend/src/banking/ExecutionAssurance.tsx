@@ -1,0 +1,11 @@
+import { useCallback,useEffect,useState } from 'react'
+import { CheckCheck,GitBranch,RefreshCw,ShieldCheck } from 'lucide-react'
+import { request } from './api'
+
+type Reconciliation={consistent:boolean;checked_at:string;checks:{id:string;title:string;matched:boolean;actual_fen?:number;expected_fen?:number}[];scope:string}
+export default function ExecutionAssurance({revision,onEvidence}:{revision:string;onEvidence:()=>void}){
+  const [report,setReport]=useState<Reconciliation|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false)
+  const read=useCallback(async()=>{setBusy(true);setError('');try{setReport(await request<Reconciliation>('/execution-reconciliation'))}catch(e){setError(e instanceof Error?e.message:'核对暂不可用')}finally{setBusy(false)}},[])
+  useEffect(()=>{let active=true;request<Reconciliation>('/execution-reconciliation').then(v=>{if(active){setReport(v);setError('')}}).catch(()=>{if(active)setError('账本核对暂不可用')});return()=>{active=false}},[revision])
+  return <section className="execution-assurance"><div className="execution-assurance-heading"><div><span className="atlas-overline">A RESULT YOU CAN VERIFY</span><h2>条件会重查，结果有据可核。</h2></div><button className="atlas-icon-button" aria-label="重新核对账本" disabled={busy} onClick={read}><RefreshCw size={17} className={busy?'spin':''}/></button></div><div className="execution-promises"><div><GitBranch size={18}/><strong>条件变化先停下</strong><p>执行前重查证据与权限，理财申购绑定风险测评版本。</p></div><div><ShieldCheck size={18}/><strong>超时先查原操作</strong><p>刷新或超时后查回原结果，未完成的操作由你决定是否继续。</p></div><div><CheckCheck size={18}/><strong>三处数据相互核对</strong><p>现金、有效预留与持仓，分别对照已保存的业务记录。</p></div></div>{error?<p className="atlas-error" role="alert">{error}</p>:report?<><div className={`execution-checks ${report.consistent?'matched':'mismatch'}`} role="status">{report.checks.map(c=><span key={c.id}>{c.matched?'✓':'!'} {c.title} · {c.matched?'一致':'需核查'}</span>)}</div><small>{new Date(report.checked_at).toLocaleString('zh-CN')} · 本地仿真记录核对，不代表外部银行对账。</small>{!report.consistent&&<p className="atlas-error">发现记录差异，请暂停新操作并核查来源。系统不会自动修改余额。</p>}</>:<p>正在核对当前账户…</p>}<p><button className="atlas-text-button" onClick={onEvidence}>查看验证范围与失败边界 ↗</button></p></section>
+}

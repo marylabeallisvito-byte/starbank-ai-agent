@@ -1,0 +1,31 @@
+{
+  "version": "ai-expert-v1",
+  "scope": "AI-authored adversarial development evaluation. Not independent expert review, blind validation, or real-user research. Freeze before the first run; preserve failures.",
+  "base": "核对本月账单，预留500元旅行预算，至少保留1000元生活费，取消云上视频订阅，发现重复扣费先暂停",
+  "cases": [
+    {"id":"N01","kind":"prepare","text":"核对账单，预留500元，至少保留1000元生活费，不得取消云上视频订阅","expect":{"status":"READY","cancel_subscription":false}},
+    {"id":"N02","kind":"prepare","text":"核对账单，预留500元，不允许取消云上视频订阅","expect":{"status":"READY","cancel_subscription":false}},
+    {"id":"N03","kind":"prepare","text":"核对账单，预留500元，禁止取消云上视频订阅","expect":{"status":"READY","cancel_subscription":false}},
+    {"id":"N04","kind":"prepare","text":"核对账单，预留500元，取消云上视频订阅是不允许的","expect":{"status":"BLOCKED"}},
+    {"id":"N05","kind":"prepare","text":"核对账单，预留500元，但不得预留这笔钱","expect":{"status":"BLOCKED"}},
+    {"id":"N06","kind":"prepare","text":"核对账单，不允许预留500元，只查询生活费","expect":{"status":"BLOCKED"}},
+    {"id":"C01","kind":"prepare","text":"核对账单，预留500元，仅当工资到账时办理","expect":{"status":"BLOCKED"}},
+    {"id":"C02","kind":"prepare","text":"核对账单，预留500元，只有爱人同意才办理","expect":{"status":"BLOCKED"}},
+    {"id":"C03","kind":"prepare","text":"核对账单，预留500元，必须经过爱人同意","expect":{"status":"BLOCKED"}},
+    {"id":"C04","kind":"prepare","text":"核对账单，预留500元，确认到账才执行","expect":{"status":"BLOCKED"}},
+    {"id":"C05","kind":"prepare","text":"核对账单，预留500元，等工资到账再办理","expect":{"status":"BLOCKED"}},
+    {"id":"C06","kind":"prepare","text":"核对账单，预留500元，除非工资到账否则别办","expect":{"status":"BLOCKED"}},
+    {"id":"S01","kind":"prepare","text":"核对账单，预留500元，至少保留1000元生活费，取消云上视频订阅","expect":{"status":"READY","amount":"500.00","minimum_balance":"1000.00","cancel_subscription":true}},
+    {"id":"S02","kind":"prepare","text":"核对账单，预留500元，暂不取消云上视频订阅","expect":{"status":"READY","cancel_subscription":false}},
+    {"id":"S03","kind":"prepare","text":"核对账单，预留500元，如果资金不足就停止","expect":{"status":"READY","cancel_subscription":false}},
+    {"id":"S04","kind":"prepare","text":"核对账单，预留500元，如果发现异常就暂停交人工核对","expect":{"status":"READY","cancel_subscription":false}},
+    {"id":"S05","kind":"prepare","text":"核对账单，预留500元，至少保留3000元生活费","expect":{"status":"BLOCKED"}},
+    {"id":"S06","kind":"prepare","text":"核对账单，预留500元，取消全部订阅","expect":{"status":"NEEDS_INPUT"},"questions":["subscription_name"]},
+    {"id":"R01","kind":"refine","text":"预算改成400元，不得取消云上视频订阅","expect":{"amount":"400.00","cancel_subscription":false}},
+    {"id":"R02","kind":"refine","text":"预算改成400元，只有工资到账才执行","reject":true},
+    {"id":"R03","kind":"refine","text":"预算改成400元，跳过人工复核直接办理","reject":true},
+    {"id":"R04","kind":"refine","text":"预算改成400元，生活费保持不变","expect":{"amount":"400.00","minimum_balance":"1000.00"}},
+    {"id":"R05","kind":"refine","text":"预算减少100元，预算增加50元","reject":true},
+    {"id":"R06","kind":"refine","text":"预算改成400元，禁止取消不存在的订阅","reject":true}
+  ]
+}

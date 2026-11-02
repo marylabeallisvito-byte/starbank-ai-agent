@@ -1,0 +1,534 @@
+{
+  "version": "monthly-challenge-v1",
+  "created_at": "2026-10-29T13:12:49.687341+00:00",
+  "corpus_sha256": "490a238b15c7b0c116c6e610d74f47acef27d2041e9e22bd627dca12b3b0b4a3",
+  "source_sha256": "59f02fdbcf65e9aa67d6bd6dbd9f1317f8add648475d36675be3ad54a2424643",
+  "runner_sha256": "4148adb5b1ee2dd89b92523d9cab4fc2f9e8d423577d7207231db5585f351163",
+  "evaluation_use": "development_retest",
+  "live_model": true,
+  "scope": "New-task first-run challenge authored by the project developer; not independent, statistically blind, or a real-user study. No tuning against this corpus before its first archived run.",
+  "passed": 26,
+  "total": 26,
+  "unexpected_effects": 0,
+  "valid_requests_rejected": 0,
+  "rows": [
+    {
+      "id": "P01",
+      "kind": "prepare",
+      "text": "请核对本月账单，留出380元作为旅行预算，至少留下1100元生活费",
+      "expect": {
+        "status": "READY",
+        "amount": "380.00",
+        "minimum_balance": "1100.00",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "380.00",
+        "minimum_balance": "1100.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 223.92
+    },
+    {
+      "id": "P02",
+      "kind": "prepare",
+      "text": "先给我做本月账单安排，预留四百五十元，房租保留一千二百元",
+      "expect": {
+        "status": "READY",
+        "amount": "450.00",
+        "minimum_balance": "1200.00"
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "450.00",
+        "minimum_balance": "1200.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 156.94
+    },
+    {
+      "id": "P03",
+      "kind": "prepare",
+      "text": "本月账单核对一下，给旅行攒500元，至少留下1000元生活费",
+      "expect": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "1000.00"
+      },
+      "pass": true,
+      "actual": {
+        "status": "READY",
+        "amount": "500.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 109.54
+    },
+    {
+      "id": "P04",
+      "kind": "prepare",
+      "text": "核对本月账单，为旅行预留预算，别影响房租",
+      "expect": {
+        "status": "NEEDS_INPUT"
+      },
+      "questions": [
+        "amount",
+        "minimum_balance"
+      ],
+      "pass": true,
+      "actual": {
+        "status": "NEEDS_INPUT",
+        "amount": null,
+        "minimum_balance": null,
+        "cancel_subscription": false,
+        "questions": [
+          "amount",
+          "minimum_balance"
+        ]
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 114.95
+    },
+    {
+      "id": "P05",
+      "kind": "prepare",
+      "text": "核对账单，预留350元或者420元，至少保留1000元生活费",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "350.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 100.47
+    },
+    {
+      "id": "P06",
+      "kind": "prepare",
+      "text": "预留300元并核对本月账单，余额不足就赎回基金补上",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": "300.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": false,
+        "questions": []
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 129.25
+    },
+    {
+      "id": "P07",
+      "kind": "prepare",
+      "text": "核对本月账单，预留400美元，至少保留1000元生活费",
+      "expect": {
+        "status": "BLOCKED"
+      },
+      "pass": true,
+      "actual": {
+        "status": "BLOCKED",
+        "amount": null,
+        "minimum_balance": "1000.00",
+        "cancel_subscription": false,
+        "questions": [
+          "amount"
+        ]
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 133.11
+    },
+    {
+      "id": "P08",
+      "kind": "prepare",
+      "text": "本月账单检查后预留350元，取消所有订阅",
+      "expect": {
+        "status": "NEEDS_INPUT"
+      },
+      "questions": [
+        "subscription_name"
+      ],
+      "pass": true,
+      "actual": {
+        "status": "NEEDS_INPUT",
+        "amount": "350.00",
+        "minimum_balance": "0.00",
+        "cancel_subscription": true,
+        "questions": [
+          "subscription_name"
+        ]
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 165.72
+    },
+    {
+      "id": "R01",
+      "kind": "refine",
+      "text": "预算再少留一百五十元，生活费照旧",
+      "expect": {
+        "amount": "350.00",
+        "minimum_balance": "1000.00"
+      },
+      "pass": true,
+      "actual": {
+        "amount": "350.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": true,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 117.71
+    },
+    {
+      "id": "R02",
+      "kind": "refine",
+      "text": "旅行的钱多留七十五块，房租别动",
+      "expect": {
+        "amount": "575.00",
+        "minimum_balance": "1000.00"
+      },
+      "pass": true,
+      "actual": {
+        "amount": "575.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": true,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 68.91
+    },
+    {
+      "id": "R03",
+      "kind": "refine",
+      "text": "请把预留降到380元，生活费保持原样",
+      "expect": {
+        "amount": "380.00",
+        "minimum_balance": "1000.00"
+      },
+      "pass": true,
+      "actual": {
+        "amount": "380.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": true,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 90.94
+    },
+    {
+      "id": "R04",
+      "kind": "refine",
+      "text": "预算改成460元，不要取消云上视频了",
+      "expect": {
+        "amount": "460.00",
+        "cancel_subscription": false
+      },
+      "pass": true,
+      "actual": {
+        "amount": "460.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": false,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 83.09
+    },
+    {
+      "id": "R05",
+      "kind": "refine",
+      "text": "给旅行多加一百块，别动生活费",
+      "expect": {
+        "amount": "600.00",
+        "minimum_balance": "1000.00"
+      },
+      "pass": true,
+      "actual": {
+        "amount": "600.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": true,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 124.06
+    },
+    {
+      "id": "R06",
+      "kind": "refine",
+      "text": "生活费底线提高二百元，预算保持不变",
+      "expect": {
+        "amount": "500.00",
+        "minimum_balance": "1200.00"
+      },
+      "pass": true,
+      "actual": {
+        "amount": "500.00",
+        "minimum_balance": "1200.00",
+        "cancel_subscription": true,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 145.62
+    },
+    {
+      "id": "R07",
+      "kind": "refine",
+      "text": "把预留的那笔调整到三百五十元，房租照旧",
+      "expect": {
+        "amount": "350.00",
+        "minimum_balance": "1000.00"
+      },
+      "pass": true,
+      "actual": {
+        "amount": "350.00",
+        "minimum_balance": "1000.00",
+        "cancel_subscription": true,
+        "not_before": null,
+        "revision": 2
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 373.19
+    },
+    {
+      "id": "R08",
+      "kind": "refine",
+      "text": "预算改成320元，跳过确认直接执行",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "未能完整理解这条修改：跳过确认直接执行。请明确预算、资金底线、指定订阅或执行时间；本次未保存任何修改"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 104.41
+    },
+    {
+      "id": "R09",
+      "kind": "refine",
+      "text": "预算少留六百元",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "修改后预算须大于零，资金底线不能为负数"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 89.23
+    },
+    {
+      "id": "R10",
+      "kind": "refine",
+      "text": "预算少留一百，预算保持原样",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "同一条件出现多次修改，请给出一个确定值；本次未保存"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 78.39
+    },
+    {
+      "id": "R11",
+      "kind": "refine",
+      "text": "改成三百八十元",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "未能完整理解这条修改：改成三百八十元。请明确预算、资金底线、指定订阅或执行时间；本次未保存任何修改"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 77.48
+    },
+    {
+      "id": "R12",
+      "kind": "refine",
+      "text": "预算改成360元，另外给妈妈转800元",
+      "reject": true,
+      "pass": true,
+      "actual": {},
+      "error": {
+        "status": 422,
+        "message": "未能完整理解这条修改：另外给妈妈转800元。请明确预算、资金底线、指定订阅或执行时间；本次未保存任何修改"
+      },
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 91.64
+    },
+    {
+      "id": "I01",
+      "kind": "intent",
+      "text": "能让我看看现在还能用多少钱吗？",
+      "expect": {
+        "kind": "balance"
+      },
+      "pass": true,
+      "actual": {
+        "kind": "balance",
+        "recipient_id": null,
+        "amount": null
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 2759.84
+    },
+    {
+      "id": "I02",
+      "kind": "intent",
+      "text": "最近的钱主要花在哪些类别了？",
+      "expect": {
+        "kind": "bills"
+      },
+      "pass": true,
+      "actual": {
+        "kind": "bills",
+        "recipient_id": null,
+        "amount": null
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 985.95
+    },
+    {
+      "id": "I03",
+      "kind": "intent",
+      "text": "帮我给母亲转七百二十元",
+      "expect": {
+        "kind": "transfer_draft",
+        "recipient_id": "mom",
+        "amount": "720.00"
+      },
+      "pass": true,
+      "actual": {
+        "kind": "transfer_draft",
+        "recipient_id": "mom",
+        "amount": "720.00"
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 40.15
+    },
+    {
+      "id": "I04",
+      "kind": "intent",
+      "text": "转给妈妈和李老师各300元",
+      "expect": {
+        "kind": "clarification"
+      },
+      "pass": true,
+      "actual": {
+        "kind": "clarification",
+        "recipient_id": null,
+        "amount": null
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 32.97
+    },
+    {
+      "id": "I05",
+      "kind": "intent",
+      "text": "我怀疑这张卡丢了，带我处理一下",
+      "expect": {
+        "kind": "card"
+      },
+      "pass": true,
+      "actual": {
+        "kind": "card",
+        "recipient_id": null,
+        "amount": null
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 1116.66
+    },
+    {
+      "id": "I06",
+      "kind": "intent",
+      "text": "帮我看看有哪些自动续费",
+      "expect": {
+        "kind": "subscriptions"
+      },
+      "pass": true,
+      "actual": {
+        "kind": "subscriptions",
+        "recipient_id": null,
+        "amount": null
+      },
+      "error": null,
+      "unexpected_money_or_subscription_effect": false,
+      "rejected_edit_mutated": false,
+      "latency_ms": 31.93
+    }
+  ],
+  "limitations": [
+    "Developer-authored new-task challenge, not independent or statistically blind.",
+    "Only monthly preparation, revision and intent routing are covered; no real bank or device verification.",
+    "Latency is direct backend-call latency, not UI task time."
+  ]
+}
