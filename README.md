@@ -2,7 +2,7 @@
   <img src="docs/assets/cover-launch.png" width="100%" alt="星河 STARBANK 产品概念主视觉：让目标，安心抵达。" />
 </p>
 
-<p align="center"><strong>可控执行、全程可追溯的银行 AI 智能体</strong></p>
+<h1 align="center">星河——可控执行、全程可追溯的银行 AI 智能体</h1>
 <p align="center">2026 深圳国际金融科技创新大赛 · 人工智能赛道</p>
 <p align="center">
   <a href="#从一个目标到完整办理">产品体验</a> ·
