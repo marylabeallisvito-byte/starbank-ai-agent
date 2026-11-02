@@ -1,3 +1,5 @@
+Current cover updated 2026-11-02: see launch-visual-notes.md for the new minimalist launch-art brief and interpretation. The previous generation prompt below is retained as design history and no longer describes the current cover.
+
 Tool: built-in image_gen. The tool's internal model version is not separately asserted.
 Purpose: conceptual cover illustration, not a screenshot or implementation diagram.
 
